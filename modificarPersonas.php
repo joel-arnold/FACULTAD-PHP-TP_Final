@@ -29,16 +29,100 @@
 
         }
         else{
+    ?>
             <form action="modifPerson.php" method ="post" name="formularioModificar">
 
+                <table width = "356">
+                <tr>
+					<td width="103">
+						Legajo:
+					</td>
+					<td width="243">
+						<input type="text" name="legajo" readonly="true" value="<?php 
+							echo($fila['legajo']); ?>">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="103">
+						Nombre y Apellido:
+					</td>
+					<td width="243">
+						<input type="text" name="nom_apel" value="<?php 
+							echo($fila['nombre y apellido']); ?>">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="103">
+						Email:
+					</td>
+					<td width="243">
+						<input type="text" name="mail" value="<?php 
+							echo($fila['email']); ?>">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="103">
+						Direccion:
+					</td>
+					<td width="243">
+						<input type="text" name="direccion" value="<?php 
+							echo($fila['direccion']); ?>">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="103">
+						Telefono:
+					</td>
+					<td width="243">
+						<input type="text" name="telefono" value="<?php 
+							echo($fila['telefono']); ?>">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="103">
+						Fecha de Nacimiento:
+					</td>
+					<td width="243">
+						<input type="text" name="fec_nac" value="<?php 
+							$res = $fila['fecha_nacimiento'];?>">
+					</td>
+				</tr>
+                <tr>
+					<td width="103">
+						Tipo de Usuario
+					</td>
+					<td width="243">
+						<select>
+                            <option name="tipo_usuario" value="Administrador">Administrador</option>
+                            <option name="tipo_usuario" value="Alumno">Alumno</option>
+                            <option name="tipo_usuario" value="Docente">Docente</option>
+                        </select>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" name="submit" value="Modificar">
+					</td>
+
+				</tr>
+				</tr>
 
 
-
-
+            
+                </table>
+            
             </form>
-
+    <?php
         }
+        mysqli_free_result($vResultado);
 
+        mysqli_close($link);
 
 
     ?>
