@@ -1,10 +1,10 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
 
     <title>Login</title>
     
@@ -36,19 +36,28 @@
                      <h2>Iniciar Sesión</h2>
                      <hr class="star-light">
                 <div class="formLogin">
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" role="form" action="login.php" method="POST" name="formlogin">
                         <div class="form-group">
                              <label for="inputlegajo" class="label-sm-2">Legajo</label>
                             <div class="input-sm-5">
-                               <input type="legajo" class="form-control" id="inputlegajo" placeholder="Legajo" />
+                               <input type="legajo" class="form-control" id="inputlegajo" name="legajo" placeholder="Legajo" />
                              </div>
                          </div>
                           <div class="form-group">
                            <label for="inputpassword" class="label-sm-2">Contraseña</label>
                           <div class="input-sm-5">
-                             <input type="password" class="form-control" id="inputpassword" placeholder="Contraseña" />
+                             <input type="password" class="form-control" id="inputpassword" name="password" placeholder="Contraseña" />
                            </div>
                          </div>
+                         <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                  <div class="linkRegistrar">
+                                    <label>
+                                      <a id="registrarse" href="altaUsuario.html">Registrarse</a>
+                                    </label>
+                                  </div>
+                                </div>
+                            </div>
                          <div class="form-group">
                               <div class="boton-sm-offset-2">
                                 <button type="submit" class="btn btn-default">Iniciar Sesion</button>
@@ -57,5 +66,6 @@
                         </form>
                     </div>
             </div>
+
 </body>
 </html>
