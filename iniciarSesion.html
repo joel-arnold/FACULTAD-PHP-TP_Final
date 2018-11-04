@@ -9,43 +9,53 @@
     <title>Login</title>
     
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
 
     <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css"/>
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/freelancer.min.css" rel="stylesheet"/>
+
+    <link href="estilo.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
-
-
-
-        <form class="form-horizontal" role="form">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Legajo</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Legajo">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Iniciar Sesion</button>
-                  </div>
-                </div>
-              </form>
-    
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+            <div class="container">
+                    <a class="navbar-brand js-scroll-trigger" href="#page-top">Sistema Académico</a>
+        
+        </nav>
+        <header class="masthead bg-primary text-white text-center">
+                <div class="container">
+                     <h2>Iniciar Sesión</h2>
+                     <hr class="star-light">
+                <div class="formLogin">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                             <label for="inputlegajo" class="label-sm-2">Legajo</label>
+                            <div class="input-sm-5">
+                               <input type="legajo" class="form-control" id="inputlegajo" placeholder="Legajo" />
+                             </div>
+                         </div>
+                          <div class="form-group">
+                           <label for="inputpassword" class="label-sm-2">Contraseña</label>
+                          <div class="input-sm-5">
+                             <input type="password" class="form-control" id="inputpassword" placeholder="Contraseña" />
+                           </div>
+                         </div>
+                         <div class="form-group">
+                              <div class="boton-sm-offset-2">
+                                <button type="submit" class="btn btn-default">Iniciar Sesion</button>
+                             </div>
+                        </div>
+                        </form>
+                    </div>
+            </div>
 </body>
 </html>
