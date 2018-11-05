@@ -1,3 +1,10 @@
+.header{
+    height: 600px;
+   
+}
+
+
+
 .input-sm-5{
     margin-left: auto;
     margin-right:auto;
@@ -22,4 +29,28 @@
     color: blue;
     margin-left: 15px;;
     
+}
+.migaja .breadcrumb a{
+    color: blue;
+}
+
+.migaja .breadcrumb{
+    
+    width: 250px;
+    color: gray;
+    margin-left: 30px;
+    margin-bottom: 60px;
+    
+}
+
+.migaja .breadcrumb li{
+    margin-left: 5px;
+}
+
+.menu h2{
+    display: inline-block;
+}
+
+.menu a{
+    color: blue;
 }

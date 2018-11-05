@@ -30,7 +30,7 @@ session_start();
                 alert("Usuario o Contraseña Incorrecta");
                 </script>';
     }
-    $_SESSION['Nombre'] = $fila['nombre y apellido'];  
+     
     
     
     if($fila['tipo_usuario'] == "Administrador"){
@@ -40,6 +40,7 @@ session_start();
             
     }
         else if($fila['tipo_usuario'] == "Alumno"){
+            $_SESSION['nombre'] = $fila['nombre y apellido']; 
            header("Location: menuAlumno.html");
             
            
