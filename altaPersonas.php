@@ -36,22 +36,27 @@
         $nom_apel = $_POST['nomyape'];
         $email = $_POST['email'];
         $direc = $_POST['direccion'];
-        $fecha_nac = $_POST['fec_nac'];
+        $fec_nac = $_POST['fecha_nac'];
         $telefono = $_POST['telefono'];
         $tipo_usu = $_POST['tipoUsuario'];
         $contra = $_POST['password'];
        
 
         $vSQL = "insert into usuario (nombre_apellido, email, direccion, telefono, fecha_nacimiento, tipo_usuario, pass)
-        values ('$nom_apel', '$email', '$direc', '$telefono','$fecha_nac', '$tipo_usu', '$contra')";
+        values ('$nom_apel', '$email', '$direc', '$telefono','$fec_nac', '$tipo_usu', '$contra')";
 
         mysqli_query($link,$vSQL) or die(mysqli_error($link));
 
         header("Location:menuABMAlumnos.html");
 
         ?>
+        
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            Alumno registrado con exito 
+        </div>
 
-        <br>
+        
         <?php
 
         mysqli_close($link);
