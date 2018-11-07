@@ -3,7 +3,26 @@
    
 }
 
+.boton-desplegable{
+    margin-top: 7px;
+    
+    
+    
+}
 
+.img-atencion{
+    width: 310px !important;
+    height: 200px !important;
+}
+
+.lista-desplegable{
+    text-align: center;
+    
+}
+
+.recordatorio{
+    font-size: 24px;
+}
 
 .input-sm-5{
     margin-left: auto;
