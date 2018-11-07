@@ -27,6 +27,9 @@
 
 </head>
 <body id="page-top">
+            <?php
+                session_start();
+            ?>
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
                 <div class="container">
                   <a class="navbar-brand js-scroll-trigger" href="#page-top">Sistema Académico</a>
@@ -37,7 +40,12 @@
                   <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html">Hola, <?php session_start(); $user = $_SESSION['nombre']; echo("$user");  ?></a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html">Hola, 
+                            <?php  
+                
+                                $user = $_SESSION['nombre']; 
+                                echo("$user");  
+                            ?></a>
                       </li>
                       <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.html">Cerrar Sesión</a>
@@ -59,10 +67,10 @@
                 <h2>Menú Alumnos</h2>
                 <br>
                 <br>
-                <a href="menuABMAlumnos.html">ABCM Alumnos</a>
+                <a href="menuABMAlumnos.php">ABCM Alumnos</a>
                 <br>
                 <br>
-                <a href="menuABMDocentes.html">ABCM Docentes</a>
+                <a href="menuABMDocentes.php">ABCM Docentes</a>
             
             </div>
             </div>

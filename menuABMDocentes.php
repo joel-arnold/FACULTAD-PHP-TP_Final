@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
 
-    <title>Menú ABM Alumnos</title>
+    <title>Menú ABM Docentes</title>
 
     
    <!-- Bootstrap core CSS -->
@@ -33,6 +33,10 @@
 
 </head>
 <body id="page-top">
+    <?php
+
+    session_start();
+    ?>
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
                 <div class="container">
                   <a class="navbar-brand js-scroll-trigger" href="#page-top">Sistema Académico</a>
@@ -47,23 +51,27 @@
                         <div class="btn-group">
                             <div class="boton-desplegable">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                  ABM Alumnos <span class="caret"></span>
+                                  ABM Docentes <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
                                 
                                   <li class="lista-desplegable"><a href="#alta">Alta </a></li>
                                   <br>
-                                  <li class="lista-desplegable"><a href="#">Modificar</a></li>
+                                  <li class="lista-desplegable"><a href="#modificar">Modificar</a></li>
                                   <br>
-                                  <li class="lista-desplegable"><a href="#">Baja</a></li>
+                                  <li class="lista-desplegable"><a href="#baja">Baja</a></li>
             
                                 </ul>
                               
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html"><?php session_start(); $user = $_SESSION['nombre']; echo("$user");  ?></a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.php">
+                            <?php  
+                                $user = $_SESSION['nombre']; 
+                                echo("$user");  
+                            ?></a>
                       </li>
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.html">Cerrar Sesion</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">Cerrar Sesion</a>
                       </li>
                     </ul>
                 </div>
@@ -72,17 +80,19 @@
                 </div>
               </nav>
               <header class="masthead bg-primary text-white text-center">
-                <div class="container">
+                
+                    
+                    <div class="container">
                         
                     
-                   <h2>ABM Alumnos</h2>
+                   <h2>ABM Docentes</h2>
                    <hr class="star-light">
                    <p class="recordatorio">Para dar de alta, baja o modificar, NO OLVIDE COMPLETAR TODOS LOS DATOS!</p>
                    <img class="img-atencion mb-5 d-block mx-auto" src="Atención.jpg" alt="atencion" id="atencion">
                    
-                   <section class="portfolio" id="alta">
+                   <section class="porfolio" id="alta">
                             <div class="container">
-                              <h2 class="text-center text-uppercase text-white">Alta Alumnos</h2>
+                              <h2 class="text-center text-uppercase text-white">Alta Docentes</h2>
                               <div class="formAltaAlumnos">
 
                                     <form class="form-horizontal" role="form" action="altaPersonas.php" method="POST" name="formalta">
@@ -142,7 +152,7 @@
                                          <div class="form-group">
                                               <div class="boton-sm-offset-2">
                                                   
-                                                <button type="submit"  class="btn btn-default">Agregar Alumno</button>
+                                                <input type="button"  class="btn btn-default" value="Agregar Alumno" onClick="validacion()"/>
                                                 
                                               </div>
                                               <br>
@@ -151,9 +161,66 @@
                                         </form>
                             </div>
                     </section>
-                    
+
+                    <section class="bg-primary text-white mb-0" id="modificar"> <!-- arreglar este formulario NO OLVIDAR!!-->
+                            <div class="container">
+                              <h2 class="text-center text-uppercase text-white">Modificar Docentes</h2>
+                              <div class="formModifAlumnos">
+
+                                    <form class="form-horizontal" role="form" action="menuABMAlumnos.php#modificar" method="POST" name="formModif">
+                                        <div class="form-group">
+                                             <label for="inputlegajo" class="label-sm-2">Legajo del docente que desea buscar:</label>
+                                            <div class="input-sm-5">
+                                               <input type="text" class="form-control" id="inputlegajo" name="legajo" placeholder="Legajo" value="<?php if(!empty($_POST['legajo'])) echo $_POST['legajo']; ?>" />
+                                             </div>
+                                         </div>
+                                         <div class="form-group">
+                                            <div class="boton-sm-offset-2">
+                                                  
+                                            <button type="submit" class="btn btn-default">Buscar</button>
+                                                
+                                            </div>
+                                           
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php 
+                                if(!empty($_POST['legajo'])){
+                                    include "modificarPersonas.php";
+                                    
+                                }
+                                ?>
+
+                            </div>
+                    </section>
+                    <section id="baja">
+                            <div class="container">
+                              <h2 class="text-center text-uppercase text-white">Baja Docentes</h2>
+                              <div class="formModifAlumnos">
+
+                                    <form class="form-horizontal" role="form" action="bajaPersonas.php" method="POST" name="formBaja">
+                                        <div class="form-group">
+                                             <label for="inputlegajo" class="label-sm-2">Legajo del docente que desea buscar:</label>
+                                            <div class="input-sm-5">
+                                               <input type="text" class="form-control" id="inputlegajo" name="legajo" placeholder="Legajo"/>
+                                             </div>
+                                         </div>
+                                         <div class="form-group">
+                                            <div class="boton-sm-offset-2">
+                                                  
+                                            <button type="submit" class="btn btn-default">Borrar</button>
+                                                
+                                            </div>
+                                           
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                    </section>
                 </div>
               </header>
     
+    <script src="validacion.js"></script>
 </body>
 </html>

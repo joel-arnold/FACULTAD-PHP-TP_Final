@@ -34,24 +34,26 @@ session_start();
     
     
     if($fila['tipo_usuario'] == "Administrador"){
-
-           header("Location: menuAdministrador.html");
+        $_SESSION['nombre'] = $fila['nombre_apellido']; 
+           header("Location: menuAdministrador.php");
             
             
     }
         else if($fila['tipo_usuario'] == "Alumno"){
-            $_SESSION['nombre'] = $fila['nombre y apellido']; 
-           header("Location: menuAlumno.html");
+            $_SESSION['nombre'] = $fila['nombre_apellido']; 
+           header("Location: menuAlumno.php");
             
            
         }
         else if($fila['tipo_usuario'] == "Docente"){
-           header("Location: menuDocente.html");
+            $_SESSION['nombre'] = $fila['nombre_apellido']; 
+           header("Location: menuDocente.php");
             
            
         }
         else if($fila['tipo_usuario'] == "Director"){
-            header("Location: menuDirector.html");            
+            $_SESSION['nombre'] = $fila['nombre_apellido']; 
+            header("Location: menuDirector.php");            
             
         }
 

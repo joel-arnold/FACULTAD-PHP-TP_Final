@@ -47,17 +47,7 @@
 
         mysqli_query($link,$vSQL) or die(mysqli_error($link));
 
-        header("Location:menuABMAlumnos.html");
-
-        ?>
-        
-        <div class="alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            Alumno registrado con exito 
-        </div>
-
-        
-        <?php
+        header("Location:menuABMAlumnos.php");
 
         mysqli_close($link);
 
