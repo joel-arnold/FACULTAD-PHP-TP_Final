@@ -37,8 +37,8 @@ function validacion(){
         return false;
     }
     
-        <div class="alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            Alumno registrado con exito 
-        </div>
+        //<div class="alert alert-warning alert-dismissible" role="alert">
+          //  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            //Alumno registrado con exito
+        //</div>
 }

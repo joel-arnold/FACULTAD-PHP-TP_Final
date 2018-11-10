@@ -34,10 +34,11 @@
 
 </head>
 <body id="page-top">
+    
     <?php
-
     session_start();
     ?>
+
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
                 <div class="container">
                   <a class="navbar-brand js-scroll-trigger" href="index.php">Sistema Académico</a>
@@ -81,21 +82,21 @@
                 </div>
               </nav>
               <header class="masthead bg-primary text-white text-center">
-                <div class="header">
+                <!--<div class="header">
                     <div class="migaja">
                         <ol class="breadcrumb">
                             <li><a href="index.html">Inicio / </a></li>
                             <li class="active">Menú Administrador</li>      
                         </ol>
                     </div>
-                
+                -->
                     
                     <div class="container">
                         
                     
                    <h2>ABM Alumnos</h2>
                    <hr class="star-light">
-                   <p class="recordatorio">Para dar de alta, baja o modificar, NO OLVIDE COMPLETAR TODOS LOS DATOS!</p>
+                   <p class="recordatorio">Para dar de alta, baja o modificar, ¡NO OLVIDE COMPLETAR TODOS LOS DATOS!</p>
                    <img class="img-atencion mb-5 d-block mx-auto" src="Atención.jpg" alt="atencion" id="atencion">
                    
                    <section class="porfolio" id="alta">
@@ -160,7 +161,7 @@
                                          <div class="form-group">
                                               <div class="boton-sm-offset-2">
                                                   
-                                                <input type="button"  class="btn btn-default" value="Agregar Alumno" onClick="validacion()"/>
+                                                <button type="submit"  class="btn btn-default" value="Agregar Alumno" onClick ="validacion()">
                                                 
                                               </div>
                                               <br>
@@ -177,9 +178,9 @@
 
                                     <form class="form-horizontal" role="form" action="menuABMAlumnos.php#modificar" method="POST" name="formModif">
                                         <div class="form-group">
-                                             <label for="inputlegajo" class="label-sm-2">Legajo del alumno que desea buscar:</label>
+                                             <label for="inputLegajoModifica" class="label-sm-2">Legajo del alumno que desea buscar:</label>
                                             <div class="input-sm-5">
-                                               <input type="text" class="form-control" id="inputlegajo" name="legajo" placeholder="Legajo" value="<?php if(!empty($_POST['legajo'])) echo $_POST['legajo']; ?>" />
+                                               <input type="text" class="form-control" id="inputLegajoModifica" name="legajo" placeholder="Legajo" value="<?php if(!empty($_POST['legajo'])) echo $_POST['legajo']; ?>" />
                                              </div>
                                          </div>
                                          <div class="form-group">
@@ -208,9 +209,9 @@
 
                                     <form class="form-horizontal" role="form" action="bajaPersonas.php" method="POST" name="formBaja">
                                         <div class="form-group">
-                                             <label for="inputlegajo" class="label-sm-2">Legajo del alumno que desea buscar:</label>
+                                             <label for="inputLegajoBaja" class="label-sm-2">Legajo del alumno que desea buscar:</label>
                                             <div class="input-sm-5">
-                                               <input type="text" class="form-control" id="inputlegajo" name="legajo" placeholder="Legajo"/>
+                                               <input type="text" class="form-control" id="inputLegajoBaja" name="legajo" placeholder="Legajo"/>
                                              </div>
                                          </div>
                                          <div class="form-group">
