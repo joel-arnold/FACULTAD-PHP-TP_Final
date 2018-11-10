@@ -32,7 +32,7 @@
             ?>
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
                 <div class="container">
-                  <a class="navbar-brand js-scroll-trigger" href="#page-top">Sistema Académico</a>
+                  <a class="navbar-brand js-scroll-trigger" href="index.html">Sistema Académico</a>
                   <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -55,12 +55,12 @@
               </nav>
         <header class="masthead bg-primary text-white text-center">
         <div class="header">
-                <div class="migaja">
+                <!--<div class="migaja">
                     <ol class="breadcrumb">
                         <li><a href="index.html">Inicio / </a></li>
                         <li class="active">Menú Administrador</li>      
                     </ol>
-                </div>
+                </div>-->
             <div class="container">
             <div class="menu">
                 <h2>Menú Alumnos</h2>

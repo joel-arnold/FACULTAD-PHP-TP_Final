@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Inicio de sesión</title>
 </head>
+
 <body>
 <?php
 
@@ -25,31 +28,30 @@
 
         echo'<script type="text/javascript">
                 alert("Usuario o Contraseña Incorrecta");
+                window.location.href = "iniciarSesion.php";
                 </script>';
+    }
+    else{
+        $_SESSION['nombre'] = $fila['nombre_apellido'];
+        $_SESSION['legajo'] = $usuario;
     }
     
     if($fila['tipo_usuario'] == "Administrador"){
-        $_SESSION['nombre'] = $fila['nombre_apellido']; 
+         
            header("Location: menuAdministrador.php");
             
             
     }
         else if($fila['tipo_usuario'] == "Alumno"){
-            $_SESSION['nombre'] = $fila['nombre_apellido']; 
-           header("Location: menuABMAlumnos.php");
-            
-           
+           header("Location: menuABMAlumnos.php");           
         }
+
         else if($fila['tipo_usuario'] == "Docente"){
-            $_SESSION['nombre'] = $fila['nombre_apellido']; 
            header("Location: menuABMDocentes.php");
-            
-           
         }
+
         else if($fila['tipo_usuario'] == "Director"){
-            $_SESSION['nombre'] = $fila['nombre_apellido']; 
             header("Location: menuDirector.php");            
-            
         }
 
         mysqli_free_result($vResultado);
@@ -57,4 +59,5 @@
 
 ?>
 </body>
+
 </html>
