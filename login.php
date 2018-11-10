@@ -16,9 +16,9 @@
 
 
     $usuario = $_POST['legajo'];
-    $password = $_POST['password'];
+    $contrasena = $_POST['contrasena'];
 
-    $vSQL = "select * from usuario where legajo = '$usuario'and pass = '$password'";
+    $vSQL = "select * from usuario where legajo = '$usuario'and pass = '$contrasena'";
 
     $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
