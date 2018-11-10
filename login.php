@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Inicio de sesión</title>
 </head>
 <body>
 <?php
 
-session_start();
+    session_start();
 
-?>
-
-<?php
     include("conexion.php");
     
 
@@ -30,8 +27,6 @@ session_start();
                 alert("Usuario o Contraseña Incorrecta");
                 </script>';
     }
-     
-    
     
     if($fila['tipo_usuario'] == "Administrador"){
         $_SESSION['nombre'] = $fila['nombre_apellido']; 
@@ -41,13 +36,13 @@ session_start();
     }
         else if($fila['tipo_usuario'] == "Alumno"){
             $_SESSION['nombre'] = $fila['nombre_apellido']; 
-           header("Location: menuAlumno.php");
+           header("Location: menuABMAlumnos.php");
             
            
         }
         else if($fila['tipo_usuario'] == "Docente"){
             $_SESSION['nombre'] = $fila['nombre_apellido']; 
-           header("Location: menuDocente.php");
+           header("Location: menuABMDocentes.php");
             
            
         }
