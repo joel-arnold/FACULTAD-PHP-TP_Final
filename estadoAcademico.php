@@ -37,6 +37,7 @@
     
     <?php
     session_start();
+    include("conexion.php");
     ?>
 
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
@@ -73,70 +74,68 @@
                 <div class="container">
 
                    <?php
-                   if($_SESSION['tipoUsuario'] == "Alumno"){    
-                   ?>
-                   <h2>INSCRIBIRSE A UNA MATERIA</h2>
-                   <hr class="star-light">
-                   <p class="recordatorio">Formulario de inscripción a materias.</p>
-                <!--<img class="img-atencion mb-5 d-block mx-auto" src="Atención.jpg" alt="atencion" id="atencion">-->
-                   
-                   <section class="porfolio" id="alta">
-                            <div class="container">
-                              <div class="formAltaAlumnos">
-                                    <form class="form-horizontal" role="form" action="inscripcion.php" method="POST" name="formalta">
-                                        <div class="form-group">
-                                             <label for="inputnomyape" class="label-sm-2">Nombre del alumno</label>
-                                            <div class="input-sm-5">
-                                               <input type="text" disabled="disabled" class="form-control" id="inputnomyape" name="nomyape" placeholder="<?php echo $_SESSION['nombre']; ?>" />
-                                             </div>
-                                         </div>
+                   if($_SESSION['tipoUsuario'] == "Alumno"){
+                        $nombre = $_SESSION['nombre'];
+                        $fecha=date("d-m-Y");
+                    ?>
+                    <h2>ESTADO ACADEMICO</h2>
+                    <hr class="star-light">
+                    <p class="recordatorio">Estado del alumno <?php echo $nombre ?> al <?php echo $fecha ?>.</p>
+                                    
+                    <section class="porfolio" id="alta">
+                                <div class="container">
+                                    <table class="table">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Materia</th>
+                                            <th scope="col">Nota</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $nombre = $_SESSION['nombre'];
+                                                                                            
+                                                $vSQL = "SELECT * FROM inscripciones WHERE alumno='$nombre' ";
+                                            
+                                                $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
-                                         <div class="form-group">
-                                                <label for="materia" class="label-sm-2">Materia</label>
-                                                <div class="input-sm-5">
-                                                <select class="form-control" name="materia" id="materia">
-                                                        
-                                                        <?php
-                                                            include('conexion.php');
-                                                            
-                                                             $vSQL = "select * from materia";
-                                                         
-                                                             $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
-                                                         
-                                                             $cantResultados = mysqli_num_rows($vResultado);
+                                                $cantResultados = mysqli_num_rows($vResultado);
 
                                                              for($i=1;$i<=$cantResultados;$i++){
                                                                  $fila = mysqli_fetch_array($vResultado);
-                                                                 ?> <option> <?php echo $fila['nombre_materia']; ?> </option> <?php
+                                                                 ?>
+                                                                    <tr>
+                                                                    <th scope="row"><?php echo $fila['id_inscripcion'] ?></th>
+                                                                    <td><?php echo $fila['alumno'] ?></td>
+                                                                    <td>
+                                                                        <?php echo if($fila['id_inscripcion'] == 0){
+                                                                            echo "Aún no calificado."
+                                                                        }
+                                                                        else{
+                                                                            echo $fila['id_inscripcion'];
+                                                                        } ?>
+                                                                    </td>
+                                                                    </tr>
+                                                                 <?php
                                                              }
-                                                            
-                                                        ?>
-                                                        
-                                                </select>
-                                                </div>
-                                         </div>
-                                         <div class="form-group">
-                                              <div class="boton-sm-offset-2">
-                                                  
-                                                <input type="submit"  class="btn btn-default" value="Inscribirse">
                                                 
-                                              </div>
-                                              <br>
-                                           
-                                        </div>
-                                        </form>
-                            </div>
-                    </section>
+                                                mysqli_close($link);
+                                            ?>
+                                        </tbody>
+                                        </table>
+                                </div>
+                        </section>
 
-                    <?php
-                    }
-                   else{
-                    ?>
-                    <div class="container">
-                    <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
-                    </div>
-                    <?php
-                    }
+                        <?php
+                        }
+                    else{
+                        ?>
+                        <div class="container">
+                        <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
+                        </div>
+                        <?php
+                        }
                     ?>
 
                 </div>
