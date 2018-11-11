@@ -53,11 +53,11 @@
                         <!--<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="iniciarSesion.html">Iniciar Sesión</a>-->
                         <div class="btn-group">
                             <li class="nav-item mx-0 mx-lg-1">
-                                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html">
+                                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuAlumno.php">
                                     
                                     <?php  
-                                        $user = $_SESSION['nombre']; 
-                                        echo("$user");  
+                                        $usuario = $_SESSION['nombre']; 
+                                        echo("$usuario");  
                                     ?></a>
                             </li>
                             <li class="nav-item mx-0 mx-lg-1">
@@ -75,56 +75,98 @@
 
                    <?php
                    if($_SESSION['tipoUsuario'] == "Alumno"){
-                        $nombre = $_SESSION['nombre'];
                         $fecha=date("d-m-Y");
                     ?>
                     <h2>ESTADO ACADEMICO</h2>
                     <hr class="star-light">
-                    <p class="recordatorio">Estado del alumno <?php echo $nombre ?> al <?php echo $fecha ?>.</p>
+                    <p class="recordatorio">Estado del alumno <?php echo $usuario ?> al <?php echo $fecha ?>.</p>
                                     
                     <section class="porfolio" id="alta">
                                 <div class="container">
-                                    <table class="table">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Materia</th>
-                                            <th scope="col">Nota</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                                $nombre = $_SESSION['nombre'];
-                                                                                            
-                                                $vSQL = "SELECT * FROM inscripciones WHERE alumno='$nombre' ";
+
+                                    <?php
+                                        $vSQL = "SELECT * FROM inscripciones WHERE alumno='$usuario' ";
+                                        $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
+                                        $total_registros = mysqli_num_rows($vResultado);
+
+                                        if(!$total_registros == 0){
+                                            $regPorPagina = 3;
+
+                                            if(!isset($_GET["pagina"])){
+                                                $pagina = 1;
+                                                $inicio = 0;		
+                                            }
+                                            else{
+                                                $pagina = $_GET["pagina"];
+                                                $inicio = ($pagina - 1) * $regPorPagina;
+                                            }
                                             
-                                                $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
-
-                                                $cantResultados = mysqli_num_rows($vResultado);
-
-                                                             for($i=1;$i<=$cantResultados;$i++){
-                                                                 $fila = mysqli_fetch_array($vResultado);
-                                                                 ?>
-                                                                    <tr>
-                                                                    <th scope="row"><?php echo $fila['id_inscripcion'] ?></th>
-                                                                    <td><?php echo $fila['alumno'] ?></td>
-                                                                    <td>
-                                                                        <?php echo if($fila['id_inscripcion'] == 0){
-                                                                            echo "Aún no calificado."
-                                                                        }
-                                                                        else{
-                                                                            echo $fila['id_inscripcion'];
-                                                                        } ?>
-                                                                    </td>
-                                                                    </tr>
-                                                                 <?php
-                                                             }
-                                                
-                                                mysqli_close($link);
+                                            $cantDePag = ceil($total_registros / $regPorPagina);
+                                            
+                                            $consultaLimitada = "SELECT * FROM inscripciones WHERE alumno='$usuario' LIMIT ".$inicio.",".$regPorPagina;
+                                            $resultado_limitado = mysqli_query($link,$consultaLimitada);
+                                            $cant_resultados_limitados = mysqli_num_rows($resultado_limitado);
+                                                        
+                                            ?>
+                                            <table class="table">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Materia</th>
+                                                    <th scope="col">Nota</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                            <?php
+                                            while ($fila = mysqli_fetch_array($resultado_limitado)){
+                                                    ?>
+                                                    <tr>
+                                                    <th scope="row"><?php echo $fila['id_inscripcion'] ?></th>
+                                                    <td><?php echo $fila['materia'] ?></td>
+                                                    <td>
+                                                        <?php if($fila['nota'] == 0){
+                                                            echo "Aún no calificado.";
+                                                        }
+                                                        else{
+                                                            echo $fila['nota'];
+                                                        } ?>
+                                                    </td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                                mysqli_free_result($resultado_limitado);
+                                            }
+                                        else{
+                                            echo "El alumno no se inscribió a ninguna materia aún.";
+                                        }
+                                        mysqli_free_result($vResultado);
+                                        mysqli_close($link);
                                             ?>
                                         </tbody>
                                         </table>
                                 </div>
+                                
+                                <p class="text-primary">
+                                <?php
+                                
+                                if(!$total_registros == 0){
+                                    if($cantDePag == 1){
+                                        echo "Estos son todas las inscripciones del alumno.";
+                                    }
+                                    else{
+                                        for($i=1;$i<=$cantDePag;$i++){
+                                            if($i == $pagina){
+                                                echo "Página ".$i."    ";
+                                            }
+                                            else{
+                                                ?><a href="estadoAcademico.php?<?php echo "pagina=".$i ?>">Página <?php echo $i ?></a>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>
+                                </p>
                         </section>
 
                         <?php
