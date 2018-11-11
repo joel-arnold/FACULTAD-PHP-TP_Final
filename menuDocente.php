@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,7 +37,11 @@
                   <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html">Hola, <?php session_start(); echo $_SESSION['nombre'];  ?></a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html">
+                          <?php 
+                          session_start(); 
+                          echo $_SESSION['nombre'];  
+                          ?></a>
                       </li>
                       <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.html">Cerrar Sesión</a>
@@ -48,29 +52,38 @@
               </nav>
         <header class="masthead bg-primary text-white text-center">
         <div class="header">
-                <div class="migaja">
-                    <ol class="breadcrumb">
-                        <li><a href="index.html">Inicio / </a></li>
-                        <li class="active">Menú Docentes</li>      
-                    </ol>
-                </div>
+            
             <div class="container">
             <div class="menu">
+            <?php
+              if($_SESSION['tipoUsuario'] == "Docente"){
+            ?>
+            
                 <h2>Menú Docentes</h2>
                 <br>
                 <br>
-                <a href="altaNotas.html">Cargar Notas</a>
+                <a href="altaNotas.php">Cargar Notas</a>
                 <br>
                 <br>
-                <a href="modificaNotas.html">Modificar Notas</a>
+                <a href="modificaNotas.php">Modificar Notas</a>
                 <br>
                 <br>
-                <a href="listadoComisiones.html">Comisiones</a>
-               
+                <a href="listadoComisiones.php">Comisiones</a>
+                <?php
+  }else{
+  ?>
+      <div class="container">
+      <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
+      </div>
+      <?php
+      }
+  ?>
                 
             </div>
             </div>
+   
         </div>
+
         </header>
     
 </body>

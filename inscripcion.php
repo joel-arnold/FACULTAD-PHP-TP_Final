@@ -4,10 +4,12 @@
 
     include("conexion.php");
 
-    $nombre = $_SESSION['nombre'];
+    $legajo = $_SESSION['legajo'];
     $materia = $_POST['materia'];
 
-    $vSQL = "INSERT INTO inscripciones (alumno,materia) VALUES ('$nombre','$materia')";
+    
+
+    $vSQL = "INSERT INTO inscripciones (legajo_alumno,id_materia) VALUES ('$nombre','$materia')";
 
     mysqli_query($link, $vSQL) or die(mysqli_error($link));
 

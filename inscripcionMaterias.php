@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Menú ABM Alumnos</title>
+    <title>Inscripción Alumnos</title>
 
     
    <!-- Bootstrap core CSS -->
@@ -107,7 +107,7 @@
 
                                                              for($i=1;$i<=$cantResultados;$i++){
                                                                  $fila = mysqli_fetch_array($vResultado);
-                                                                 ?> <option> <?php echo $fila['nombre_materia']; ?> </option> <?php
+                                                                 ?> <option value= "<?php echo $fila['id_materia']?>"> <?php echo $fila['nombre_materia']; ?> </option> <?php
                                                              }
                                                             
                                                         ?>

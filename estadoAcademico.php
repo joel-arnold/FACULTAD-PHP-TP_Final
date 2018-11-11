@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -8,14 +8,14 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Menú ABM Alumnos</title>
+    <title>Estado Académico</title>
 
     
    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
@@ -56,7 +56,8 @@
                                 <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuAlumno.php">
                                     
                                     <?php  
-                                        $usuario = $_SESSION['nombre']; 
+                                        $legajo = $_SESSION['legajo']; 
+                                        $usuario = $_SESSION['nombre'];
                                         echo("$usuario");  
                                     ?></a>
                             </li>
@@ -79,13 +80,15 @@
                     ?>
                     <h2>ESTADO ACADEMICO</h2>
                     <hr class="star-light">
-                    <p class="recordatorio">Estado del alumno <?php echo $usuario ?> al <?php echo $fecha ?>.</p>
+                    <p class="recordatorio">Estado del alumno <?php 
+                    echo $usuario ?> 
+                    al <?php echo $fecha ?>.</p>
                                     
                     <section class="porfolio" id="alta">
                                 <div class="container">
 
                                     <?php
-                                        $vSQL = "SELECT * FROM inscripciones WHERE alumno='$usuario' ";
+                                        $vSQL = "SELECT * FROM inscripciones WHERE legajo_alumno='$legajo' ";
                                         $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
                                         $total_registros = mysqli_num_rows($vResultado);
 
@@ -103,7 +106,7 @@
                                             
                                             $cantDePag = ceil($total_registros / $regPorPagina);
                                             
-                                            $consultaLimitada = "SELECT * FROM inscripciones WHERE alumno='$usuario' LIMIT ".$inicio.",".$regPorPagina;
+                                            $consultaLimitada = "SELECT * FROM inscripciones WHERE legajo_alumno='$legajo' LIMIT ".$inicio.",".$regPorPagina;
                                             $resultado_limitado = mysqli_query($link,$consultaLimitada);
                                             $cant_resultados_limitados = mysqli_num_rows($resultado_limitado);
                                                         
@@ -146,9 +149,9 @@
                                         </table>
                                 </div>
                                 
-                                <p class="text-primary">
-                                <?php
-                                
+                                <div class="paginacion">
+                                    <ul class="pagination justify-content-center">
+                                <?php 
                                 if(!$total_registros == 0){
                                     if($cantDePag == 1){
                                         echo "Estos son todas las inscripciones del alumno.";
@@ -156,17 +159,18 @@
                                     else{
                                         for($i=1;$i<=$cantDePag;$i++){
                                             if($i == $pagina){
-                                                echo "Página ".$i."    ";
+                                                echo "<li class='page-item'><a class='page-link active'>Página ".$i." </a> </li>  ";
                                             }
                                             else{
-                                                ?><a href="estadoAcademico.php?<?php echo "pagina=".$i ?>">Página <?php echo $i ?></a>
+                                                ?><li class="page-item"><a class="page-link" href="estadoAcademico.php?<?php echo "pagina=".$i ?>">Página <?php echo $i ?></a></li>
                                                 <?php
                                             }
                                         }
                                     }
                                 }
                                 ?>
-                                </p>
+                                </ul>
+                                </div>
                         </section>
 
                         <?php

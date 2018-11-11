@@ -71,7 +71,10 @@
     color: blue;
 }
 
-a{
-    font-weight: bold;
-    color: aliceblue !important;
+.active{
+    color: black !important;
+}
+
+.selector{
+    width: 250px !important;
 }

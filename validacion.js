@@ -42,3 +42,4 @@ function validacion(){
             //Alumno registrado con exito
         //</div>
 }
+

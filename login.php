@@ -46,12 +46,13 @@
         }
 
         else if($fila['tipo_usuario'] == "Docente"){
-           header("Location: menuABMDocentes.php");
+           header("Location: menuDocente.php");
         }
 
         else if($fila['tipo_usuario'] == "Director"){
             header("Location: menuDirector.php");            
         }
+      
 
         mysqli_free_result($vResultado);
 		mysqli_close($link);

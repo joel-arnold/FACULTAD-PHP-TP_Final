@@ -15,7 +15,6 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
@@ -174,10 +173,10 @@
                             </div>
                     </section>
 
-                    <section class="bg-primary text-white mb-0" id="modificar"> <!-- arreglar este formulario NO OLVIDAR!!-->
+                    <section class="bg-primary text-white mb-0" id="modificar"> 
                             <div class="container">
                               <h2 class="text-center text-uppercase text-white">Modificar Alumnos</h2>
-                              <div class="formModifAlumnos">
+                              <div class="formModifAlumnos" id="formModifAlumnos">
 
                                     <form class="form-horizontal" role="form" action="menuABMAlumnos.php#modificar" method="POST" name="formModif">
                                         <div class="form-group">
@@ -196,12 +195,12 @@
                                         </div>
                                     </form>
                                 </div>
-                                <?php 
-                                if(!empty($_POST['legajo'])){
+                                <?php if(!empty($_POST['legajo'])){
                                     include "modificarPersonas.php";
-                                    
-                                }
-                                ?>
+                                    echo "<script src= 'mostrarForm.js'></script>";
+
+                                    } ?>
+                                
 
                             </div>
                     </section>
@@ -210,7 +209,7 @@
                               <h2 class="text-center text-uppercase text-white">Baja Alumnos</h2>
                               <div class="formModifAlumnos">
 
-                                    <form class="form-horizontal" role="form" action="bajaPersonas.php" method="POST" name="formBaja">
+                                    <form class="form-horizontal" role="form" action="bajaPersonas.php" method="POST" name="formBaja" onSubmit="validarBorrado()">
                                         <div class="form-group">
                                              <label for="inputLegajoBaja" class="label-sm-2">Legajo del alumno que desea buscar:</label>
                                             <div class="input-sm-5">

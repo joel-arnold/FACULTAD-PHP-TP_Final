@@ -169,13 +169,13 @@
                     <section class="bg-primary text-white mb-0" id="modificar"> <!-- arreglar este formulario NO OLVIDAR!!-->
                             <div class="container">
                               <h2 class="text-center text-uppercase text-white">Modificar Docentes</h2>
-                              <div class="formModifAlumnos">
+                              <div class="formModifAlumnos" id="formModifAlumnos">
 
-                                    <form class="form-horizontal" role="form" action="menuABMAlumnos.php#modificar" method="POST" name="formModif">
+                                    <form class="form-horizontal" role="form" action="menuABMDocentes.php#modificar" method="POST" name="formModif">
                                         <div class="form-group">
-                                             <label for="inputlegajo" class="label-sm-2">Legajo del docente que desea buscar:</label>
+                                             <label for="inputLegajoModifica" class="label-sm-2">Legajo del docente que desea buscar:</label>
                                             <div class="input-sm-5">
-                                               <input type="text" class="form-control" id="inputlegajo" name="legajo" placeholder="Legajo" value="<?php if(!empty($_POST['legajo'])) echo $_POST['legajo']; ?>" />
+                                               <input type="text" class="form-control" id="inputLegajoModifica" name="legajo" placeholder="Legajo" value="<?php if(!empty($_POST['legajo'])) echo $_POST['legajo']; ?>" />
                                              </div>
                                          </div>
                                          <div class="form-group">
@@ -188,12 +188,12 @@
                                         </div>
                                     </form>
                                 </div>
-                                <?php 
-                                if(!empty($_POST['legajo'])){
+                                <?php if(!empty($_POST['legajo'])){
                                     include "modificarPersonas.php";
-                                    
-                                }
-                                ?>
+                                    echo "<script src= 'mostrarForm.js'></script>";
+
+                                    } ?>
+                                
 
                             </div>
                     </section>
