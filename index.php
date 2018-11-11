@@ -63,7 +63,7 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Sobre Nosotros</a>
             </li>-->
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contáctenos</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contactanos</a>
             </li>
           </ul>
         </div>
@@ -176,7 +176,7 @@
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Contáctenos</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">Contactanos</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -186,28 +186,28 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Nombre</label>
-                  <input class="form-control" id="name" type="text" placeholder="Nombre" required="required" data-validation-required-message="Please enter your name.">
+                  <input class="form-control" id="name" name="nombrecito" type="text" placeholder="Nombre" required="required" data-validation-required-message="Por favor, ingrese su nombre.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Email</label>
-                  <input class="form-control" id="email" type="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email address.">
+                  <input class="form-control" name="email" id="email" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, ingrese su correo electrónico.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Tel&eacute;fono</label>
-                  <input class="form-control" id="phone" type="tel" placeholder="Tel&eacute;fono" required="required" data-validation-required-message="Please enter your phone number.">
+                  <label>Teléfono</label>
+                  <input class="form-control" name="phone" id="phone" type="tel" placeholder="Tel&eacute;fono" required="required" data-validation-required-message="Por favor, ingrese su número de teléfono.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Mensaje</label>
-                  <textarea class="form-control" id="message" rows="5" placeholder="Mensaje" required="required" data-validation-required-message="Please enter a message."></textarea>
+                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="Mensaje" required="required" data-validation-required-message="Debe escribir un mensaje."></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
