@@ -27,9 +27,13 @@
 
 </head>
 <body id="page-top">
+  <?php
+   session_start();
+  ?>
+
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
                 <div class="container">
-                  <a class="navbar-brand js-scroll-trigger" href="#page-top">Sistema Académico</a>
+                  <a class="navbar-brand js-scroll-trigger" href="index.php">Sistema Académico</a>
                   <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -37,10 +41,10 @@
                   <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html">Hola, <?php session_start(); echo $_SESSION['nombre'];  ?></a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.php"><?php echo $_SESSION['nombre'];?></a>
                       </li>
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.html">Cerrar Sesión</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">Cerrar Sesión</a>
                       </li>
                     </ul>
                   </div>
@@ -48,28 +52,37 @@
               </nav>
         <header class="masthead bg-primary text-white text-center">
         <div class="header">
-                <div class="migaja">
+                <!--<div class="migaja">
                     <ol class="breadcrumb">
                         <li><a href="index.html">Inicio / </a></li>
                         <li class="active">Menú Alumnos</li>      
                     </ol>
-                </div>
+                </div>-->
             <div class="container">
             <div class="menu">
+                <br />
+                <br />
+              
+              <?php
+              if($_SESSION['tipoUsuario'] == "Alumno"){
+              ?>
                 <h2>Menú Alumnos</h2>
-                <br>
-                <br>
-                <a href="inscripcionMateria.html">Inscripción a materias</a>
-                <br>
-                <br>
-                <a href="estadoAcademico.html">Estado académico</a>
-                <br>
-                <br>
-                <a href="modificaDatos.html">Modificar datos personales</a>
-
-    
-            
-
+                <br />
+                <br />
+                <a href="inscripcionMaterias.php">Inscripción a materias</a>
+                <br />
+                <br />
+                <a href="estadoAcademico.php">Estado académico</a>
+                <br />
+                <br />
+                <!--<a href="modificaDatos.php">Modificar datos personales</a>-->
+                <?php
+              }
+              else{
+                ?><h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
+                <?php
+              }
+              ?>
             </div>
             </div>
         </div>

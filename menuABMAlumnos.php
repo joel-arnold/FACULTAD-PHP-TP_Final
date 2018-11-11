@@ -67,6 +67,7 @@
                               
                       <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html">
+                            
                             <?php  
                                 $user = $_SESSION['nombre']; 
                                 echo("$user");  
@@ -91,9 +92,11 @@
                     </div>
                 -->
                     
-                    <div class="container">
-                        
-                    
+                <div class="container">
+
+                   <?php
+                   if($_SESSION['tipoUsuario'] == "Administrador"){    
+                   ?>
                    <h2>ABM Alumnos</h2>
                    <hr class="star-light">
                    <p class="recordatorio">Para dar de alta, baja o modificar, ¡NO OLVIDE COMPLETAR TODOS LOS DATOS!</p>
@@ -161,7 +164,7 @@
                                          <div class="form-group">
                                               <div class="boton-sm-offset-2">
                                                   
-                                                <button type="submit"  class="btn btn-default" value="Agregar Alumno" onClick ="validacion()">
+                                              <input type="button"  class="btn btn-default" value="Agregar Alumno" onClick="validacion()"/>
                                                 
                                               </div>
                                               <br>
@@ -227,6 +230,18 @@
                                 
                             </div>
                     </section>
+
+                    <?php
+                   }
+                   else{
+                    ?>
+                    <div class="container">
+                    <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
+                    </div>
+                    <?php
+                    }
+                ?>
+
                 </div>
               </header>
     

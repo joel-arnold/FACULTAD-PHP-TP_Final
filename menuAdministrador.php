@@ -41,7 +41,7 @@
                   <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html">Hola, 
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html"> 
                             <?php
                                 $user = $_SESSION['nombre']; 
                                 echo("$user");  
@@ -55,6 +55,7 @@
                 </div>
               </nav>
         <header class="masthead bg-primary text-white text-center">
+
         <div class="header">
                 <!--<div class="migaja">
                     <ol class="breadcrumb">
@@ -63,16 +64,25 @@
                     </ol>
                 </div>-->
             <div class="container">
-            <div class="menu">
-                <h2>Menú Alumnos</h2>
-                <br>
-                <br>
-                <a href="menuABMAlumnos.php">ABCM Alumnos</a>
-                <br>
-                <br>
-                <a href="menuABMDocentes.php">ABCM Docentes</a>
-            
-            </div>
+                <?php
+                if($_SESSION['tipoUsuario'] == "Administrador"){
+                    ?>
+                    <div class="menu">
+                    <h2>Menú Alumnos</h2>
+                    <br>
+                    <br>
+                    <a href="menuABMAlumnos.php">ABCM Alumnos</a>
+                    <br>
+                    <br>
+                    <a href="menuABMDocentes.php">ABCM Docentes</a>
+                    </div>
+                <?php
+                    }
+                else{
+                    ?><h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
+                    <?php
+                }
+                ?>
             </div>
         </div>
         </header>

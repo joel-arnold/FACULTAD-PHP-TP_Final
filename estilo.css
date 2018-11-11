@@ -4,10 +4,7 @@
 }
 
 .boton-desplegable{
-    margin-top: 7px;
-    
-    
-    
+    margin-top: 7px;  
 }
 
 .img-atencion{
@@ -72,4 +69,9 @@
 
 .menu a{
     color: blue;
+}
+
+.algunosLinks{
+    font-weight: bold;
+    color: aliceblue !important;
 }

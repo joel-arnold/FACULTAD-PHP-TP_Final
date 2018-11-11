@@ -83,8 +83,11 @@
               <header class="masthead bg-primary text-white text-center">
                 
                     
-                    <div class="container">
-                        
+              <?php
+                   if($_SESSION['tipoUsuario'] == "Administrador"){    
+                   ?>
+
+                <div class="container">
                     
                    <h2>ABM Docentes</h2>
                    <hr class="star-light">
@@ -219,7 +222,21 @@
                                 
                             </div>
                     </section>
+
                 </div>
+
+                 <?php
+                   }
+                   else{
+                    ?>
+                    <div class="container">
+                    <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
+                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                    </div>
+                    <?php
+                    }
+                ?>
+
               </header>
     
     <script src="validacion.js"></script>

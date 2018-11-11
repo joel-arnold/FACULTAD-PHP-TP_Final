@@ -34,16 +34,15 @@
     else{
         $_SESSION['nombre'] = $fila['nombre_apellido'];
         $_SESSION['legajo'] = $usuario;
+        $_SESSION['tipoUsuario'] = $fila['tipo_usuario'];
     }
     
     if($fila['tipo_usuario'] == "Administrador"){
          
            header("Location: menuAdministrador.php");
-            
-            
-    }
+        }
         else if($fila['tipo_usuario'] == "Alumno"){
-           header("Location: menuABMAlumnos.php");           
+           header("Location: menuAlumno.php");           
         }
 
         else if($fila['tipo_usuario'] == "Docente"){
