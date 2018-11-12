@@ -78,3 +78,9 @@
 .selector{
     width: 250px !important;
 }
+
+.modifNotas{
+    color: black !important;
+    text-decoration-line: underline;
+}
+

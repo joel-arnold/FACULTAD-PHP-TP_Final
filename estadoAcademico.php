@@ -106,7 +106,7 @@
                                             
                                             $cantDePag = ceil($total_registros / $regPorPagina);
                                             
-                                            $consultaLimitada = "SELECT * FROM inscripciones WHERE legajo_alumno='$legajo' LIMIT ".$inicio.",".$regPorPagina;
+                                            $consultaLimitada = "SELECT * FROM inscripciones i inner join materia m on m.id_materia = i.id_materia  WHERE legajo_alumno='$legajo' LIMIT ".$inicio.",".$regPorPagina;
                                             $resultado_limitado = mysqli_query($link,$consultaLimitada);
                                             $cant_resultados_limitados = mysqli_num_rows($resultado_limitado);
                                                         
@@ -125,7 +125,7 @@
                                                     ?>
                                                     <tr>
                                                     <th scope="row"><?php echo $fila['id_inscripcion'] ?></th>
-                                                    <td><?php echo $fila['materia'] ?></td>
+                                                    <td><?php echo $fila['nombre_materia'] ?></td>
                                                     <td>
                                                         <?php if($fila['nota'] == 0){
                                                             echo "Aún no calificado.";

@@ -86,7 +86,7 @@
   <hr class="star-light">
 
   <div class="altaNotas">
-    <form name="cargaNotas">
+    <form name="cargaNotas" action="listarAlum_materias.php" method="GET">
     <?php
     $vsql = "select * from materia where legajo_docente = '$legajo'";
        
@@ -96,7 +96,7 @@
    ?><div class="form-group">
       <label for="selector" class="label-sm-2">Seleccione una materia:</label>
       <div class="input-sm-5">
-      <select class="form-control">
+      <select class="form-control" name="materia"  id="materia">
         <?php
         
         for($i=0;$i<$cant_filas;$i++){
@@ -130,6 +130,8 @@
 
 </div>
 </header>
+<section class="bg-primary text-white mb-0" id="modificar"> 
+</section>
 
 
 
