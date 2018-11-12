@@ -40,18 +40,14 @@
     if($fila['tipo_usuario'] == "Administrador"){
          
            header("Location: menuAdministrador.php");
-        }
-        else if($fila['tipo_usuario'] == "Alumno"){
+    }
+    else if($fila['tipo_usuario'] == "Alumno"){
            header("Location: menuAlumno.php");           
-        }
+    }
 
-        else if($fila['tipo_usuario'] == "Docente"){
+    else if($fila['tipo_usuario'] == "Docente"){
            header("Location: menuDocente.php");
-        }
-
-        else if($fila['tipo_usuario'] == "Director"){
-            header("Location: menuDirector.php");            
-        }
+    }
       
 
         mysqli_free_result($vResultado);

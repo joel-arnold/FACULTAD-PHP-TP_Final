@@ -9,7 +9,7 @@
 
     
 
-    $vSQL = "INSERT INTO inscripciones (legajo_alumno,id_materia) VALUES ('$nombre','$materia')";
+    $vSQL = "insert into inscripciones (nota,legajo_alumno,id_materia) values ('0','$legajo','$materia')";
 
     mysqli_query($link, $vSQL) or die(mysqli_error($link));
 

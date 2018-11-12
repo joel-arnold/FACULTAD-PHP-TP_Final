@@ -12,9 +12,18 @@
 
 	if(mysqli_num_rows($vResultado)== 0){
 
-		echo("Legajo inexistente <br>");
+		echo "<script>window.alert('Legajo inexistente');</script>";
 
-		header("Location:menuABMAlumnos.php"); //poner hipervinculo para recargar pagina
+		if($fila['tipo_usuario'] == "Alumno" ){
+
+			header("Location:menuABMAlumnos.php");
+
+		}
+		else if($fila['tipo_usuario'] == "Docente"){
+
+			header("Location:menuABMDocentes.php");
+
+		}
 
 
 	}
@@ -75,7 +84,7 @@
 			<div class="form-group">
 				<div class="boton-sm-offset-2">
 												
-				<button type="submit"  class="btn btn-default">Modificar Alumno</button>
+				<button type="submit"  class="btn btn-default">Modificar</button>
 											
 				</div>
 				<br>

@@ -1,4 +1,5 @@
 function validacion(){
+
     nom = document.inputnomyape.formalta.value;
     mail = document.inputemail.formalta.value;
     direc = document.inputdirec.formalta.value;
@@ -20,11 +21,11 @@ function validacion(){
         return false;
     }
     else
-    if(tel=="" || tel== undefinded){
+    if(tel=="" || tel== undefined){
         window.alert("Compelte campo Teléfono");
         return false;
     }
-    else if(fec=="" || fec== undefinded){
+    else if(fec=="" || fec== undefined){
         window.alert("Por favor seleccione una fecha");
         return false;
     }
@@ -37,9 +38,7 @@ function validacion(){
         return false;
     }
     
-        //<div class="alert alert-warning alert-dismissible" role="alert">
-          //  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            //Alumno registrado con exito
-        //</div>
+window.alert("Usuario registrado con exito");
+return true;
 }
 

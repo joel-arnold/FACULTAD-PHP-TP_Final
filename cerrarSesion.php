@@ -10,20 +10,24 @@
 <?php
 
     session_start();
+        if(!isset($_SESSION['legajo'])){
+         echo "<script>alert('No hay sesion iniciada');</script>";
+        }
+        else{
+    
+            session_destroy();
+            header("Location:index.php");
+        }
 
-    $_SESSION['nombre'] = null;
-    $_SESSION['legajo'] = null;
-    $_SESSION['email'] = null;
-    $_SESSION['direccion'] = null;
-    $_SESSION['telefono'] = null;
-    $_SESSION['fechaNac'] = null;
-    $_SESSION['tipoUsuario'] = null;
-    $_SESSION['contraseña'] = null;
-
-    echo '<script type="text/javascript">
-         window.location.href = "index.php";
-         </script>';
-
+    //$_SESSION['nombre'] = null;
+    //$_SESSION['legajo'] = null;
+    //$_SESSION['email'] = null;
+    //$_SESSION['direccion'] = null;
+    //$_SESSION['telefono'] = null;
+    //$_SESSION['fechaNac'] = null;
+    //$_SESSION['tipoUsuario'] = null;
+    //$_SESSION['contraseña'] = null;
+    //$_SESSION['materia']= null;
 ?>
 </body>
 

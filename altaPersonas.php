@@ -47,7 +47,13 @@
 
         mysqli_query($link,$vSQL) or die(mysqli_error($link));
 
-        header("Location:menuABMAlumnos.php");
+        echo '<script type="text/javascript">
+                window.alert("Usuario agregado correctamente");
+                window.location.href = "menuAdministrador.php";
+				</script>';
+
+
+  
 
         mysqli_close($link);
 

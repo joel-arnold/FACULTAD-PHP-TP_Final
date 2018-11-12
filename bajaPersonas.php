@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Modificar Personas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-	
+
 	<?php
         include("conexion.php");
 
@@ -18,16 +7,25 @@
 		$vSQL = "select * from usuario where legajo = '$leg'";
 
 		$vResultado = mysqli_query($link, $vSQL);
+		 
+		$fila = mysqli_fetch_array($vResultado);
 
 		if(mysqli_num_rows($vResultado)==0){
 
 			echo'<script type="text/javascript">
-                alert("Usuario Incorrecto. Ingrese un legajo existente");
-                </script>';
-
+                window.alert("Usuario Incorrecto. Ingrese un legajo existente");
+				</script>';
+				
+			if($fila['tipo_usuario'] == "Alumno" ){
 			header("Location:menuABMAlumnos.php");
 
-		}
+			}
+			else if($fila['tipo_usuario'] == "Docente"){
+
+				header("Location:menuABMDocentes.php");
+
+			}
+		}	
 		else{
 
 			$vSQL = "delete from usuario where legajo = '$leg'";
@@ -35,10 +33,11 @@
 			mysqli_query($link, $vSQL);
 
 			echo'<script type="text/javascript">
-                alert("Usuario eliminado correctamente");
+				window.alert("Usuario eliminado correctamente");
+				window.location.href = "menuAdministrador.php";
 				</script>';
 				
-			header("Location: MenuAdministrador.php");
+			
 
 
 
@@ -50,5 +49,3 @@
 
 
 ?>
-</body>
-</html>

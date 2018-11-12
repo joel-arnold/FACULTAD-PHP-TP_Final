@@ -31,7 +31,7 @@
         //ini_set("smtp_port", "587");
 
         mail($correoDestino, $asunto, $cuerpoMensaje, $correoEmisor);
-        echo "Consulta enviada. Gracias por contactarnos.";
+        echo "<script>window.alert('Consulta enviada. Gracias por contactarnos.');</script>";
 
     ?>
 </body>

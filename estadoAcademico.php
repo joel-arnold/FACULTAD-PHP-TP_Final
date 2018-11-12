@@ -170,6 +170,9 @@
                                 }
                                 ?>
                                 </ul>
+                                <div class="text-right">               
+                                    <a class="btn btn-secondary" href="menuAlumno.php">Volver</a>
+                                </div>
                                 </div>
                         </section>
 
@@ -187,7 +190,7 @@
                 </div>
               </header>
     
-    <script src="validacion.js"></script>
+    
 </body>
 
 </html>

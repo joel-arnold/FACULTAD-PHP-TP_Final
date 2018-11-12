@@ -65,7 +65,7 @@
                                 </ul>
                               
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.php">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuAdministrador.php">
                             <?php  
                                 $user = $_SESSION['nombre']; 
                                 echo("$user");  
@@ -156,7 +156,10 @@
                                          <div class="form-group">
                                               <div class="boton-sm-offset-2">
                                                   
-                                                <input type="button"  class="btn btn-default" value="Agregar Alumno" onClick="validacion()"/>
+                                                <input type="submit"  class="btn btn-default" value="Agregar Docente" onclick="validacion()"/>
+                                                                                                               
+                                                <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
+                                                
                                                 
                                               </div>
                                               <br>
@@ -182,6 +185,7 @@
                                             <div class="boton-sm-offset-2">
                                                   
                                             <button type="submit" class="btn btn-default">Buscar</button>
+                                            <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                                                 
                                             </div>
                                            
@@ -213,6 +217,7 @@
                                             <div class="boton-sm-offset-2">
                                                   
                                             <button type="submit" class="btn btn-default">Borrar</button>
+                                            <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                                                 
                                             </div>
                                            

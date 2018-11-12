@@ -51,7 +51,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.html"> 
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuDocente.php"> 
             <?php
             $user = $_SESSION['nombre']; 
             echo("$user");  
@@ -111,7 +111,10 @@
       </div>
       <div class="boton-sm-offset-2">
       <button type="submit" class="btn btn-default">Listar</button>
+     
+      <a class="btn btn-secondary volver" href="menuDocente.php">Volver</a>
       </div>
+      
       
       </div>
     </form>
@@ -130,19 +133,7 @@
 
 </div>
 </header>
-<section class="bg-primary text-white mb-0" id="modificar"> 
-</section>
-
-
-
-
-
-
-
-
-
-
-
+<?php include("pieDePagina.php"); ?>
 
 
 </body>

@@ -28,11 +28,11 @@
 
         mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
-        echo'<script type="text/javascript">
-                alert("Usuario Modificado con éxito");
+        echo '<script type="text/javascript">
+                window.alert("Usuario Modificado con éxito");
+                window.location.href = "menuAdministrador.php";
                 </script>';
 
-        header("Location:menuAdministrador.php"); //poner hipervinculo para volver al inicio
 
 
         mysqli_close($link);

@@ -119,6 +119,7 @@
                                               <div class="boton-sm-offset-2">
                                                   
                                                 <input type="submit"  class="btn btn-default" value="Inscribirse">
+                                                <a class="btn btn-secondary volver" href="menuAlumno.php">Volver</a>
                                                 
                                               </div>
                                               <br>
