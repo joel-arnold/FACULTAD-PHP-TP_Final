@@ -36,7 +36,6 @@
 <?php
     include("conexion.php");
     session_start();
-    $legajo = $_SESSION['legajo'];
     ?>
 
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
@@ -52,15 +51,26 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mx-0 mx-lg-1">
           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuDocente.php"> 
-            <?php
-            $user = $_SESSION['nombre']; 
-            echo("$user");  
-            ?>
+          <?php
+            if(isset($_SESSION['nombre'])){
+              echo $_SESSION['nombre'];
+            }
+            else{
+              echo "No logueado";
+            }
+          ?>
           </a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">
-            Cerrar Sesión
+          <?php
+            if(!isset($_SESSION['tipoUsuario'])){
+              echo "Volver al incio";
+            }
+            else{
+              echo "Cerrar sesión";
+            }
+          ?>
           </a>
         </li>
       </ul>
@@ -77,61 +87,62 @@
                     </div>
                 -->
                     
-<div class="container">
-
-  <?php
-  if($_SESSION['tipoUsuario'] == "Docente"){    
-  ?>
-  <h2>Alta de Notas</h2>
-  <hr class="star-light">
-
-  <div class="altaNotas">
-    <form name="cargaNotas" action="listarAlum_materias.php" method="GET">
-    <?php
-    $vsql = "select * from materia where legajo_docente = '$legajo'";
-       
-    $resultado = mysqli_query($link, $vsql)or die(mysqli_error($link));
-   
-    $cant_filas = mysqli_num_rows($resultado);
-   ?><div class="form-group">
-      <label for="selector" class="label-sm-2">Seleccione una materia:</label>
-      <div class="input-sm-5">
-      <select class="form-control" name="materia"  id="materia">
-        <?php
-        
-        for($i=0;$i<$cant_filas;$i++){
-          $materias = mysqli_fetch_array($resultado);
-        ?>
-          <option id="selector" value= "<?php echo $materias['id_materia']?>"><?php echo $materias['nombre_materia']; ?></option>
-         <?php
-        }
-        ?>   
-       </select> 
-       
-      </div>
-      <div class="boton-sm-offset-2">
-      <button type="submit" class="btn btn-default">Listar</button>
-     
-      <a class="btn btn-secondary volver" href="menuDocente.php">Volver</a>
-      </div>
-      
-      
-      </div>
-    </form>
-    
-
-  </div>
-  <?php
-  }else{
-  ?>
       <div class="container">
-      <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
-      </div>
-      <?php
-      }
-  ?>
 
-</div>
+        <?php
+        if(isset($_SESSION['tipoUsuario']) && $_SESSION['tipoUsuario'] == "Docente"){    
+        ?>
+        <h2>Alta de Notas</h2>
+        <hr class="star-light">
+
+        <div class="altaNotas">
+          <form name="cargaNotas" action="listarAlum_materias.php" method="GET">
+          <?php
+          $vsql = "select * from materia where legajo_docente = ".$_SESSION['legajo'];
+            
+          $resultado = mysqli_query($link, $vsql)or die(mysqli_error($link));
+        
+          $cant_filas = mysqli_num_rows($resultado);
+        ?><div class="form-group">
+            <label for="selector" class="label-sm-2">Seleccione una materia:</label>
+            <div class="input-sm-5">
+            <select class="form-control" name="materia"  id="materia">
+              <?php
+              
+              for($i=0;$i<$cant_filas;$i++){
+                $materias = mysqli_fetch_array($resultado);
+              ?>
+                <option id="selector" value= "<?php echo $materias['id_materia']?>"><?php echo $materias['nombre_materia']; ?></option>
+              <?php
+              }
+              ?>   
+            </select> 
+            
+            </div>
+            <div class="boton-sm-offset-2">
+            <button type="submit" class="btn btn-default">Listar</button>
+          
+            <a class="btn btn-secondary volver" href="menuDocente.php">Volver</a>
+            </div>
+            
+            
+            </div>
+          </form>
+          
+
+        </div>
+        <?php
+        }else{
+        ?>
+            <div class="container">
+            <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
+            </div>
+            <br /><br /><br /><br /><br /><br />
+            <?php
+            }
+        ?>
+
+      </div>
 </header>
 <?php include("pieDePagina.php"); ?>
 

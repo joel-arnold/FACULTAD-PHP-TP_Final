@@ -11,7 +11,6 @@
     session_start();
         if(!isset($_SESSION['legajo'])){
             echo "<script>
-                    alert('No hay sesion iniciada');
                     window.location.href='index.php';
                  </script>";
         }

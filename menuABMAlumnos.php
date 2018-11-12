@@ -66,14 +66,27 @@
                               
                       <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuAdministrador.php">
-                            
-                            <?php  
-                                $user = $_SESSION['nombre']; 
-                                echo("$user");  
-                            ?></a>
+                            <?php
+                            if(isset($_SESSION['nombre'])){
+                                echo $_SESSION['nombre'];
+                            }
+                            else{
+                                echo "No logueado";
+                            }
+                            ?>
+                        </a>
                       </li>
                       <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">Cerrar Sesion</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">
+                            <?php
+                            if(!isset($_SESSION['tipoUsuario'])){
+                                echo "Volver al incio";
+                            }
+                            else{
+                                echo "Cerrar sesión";
+                            }
+                            ?>
+                        </a>
                       </li>
                     </ul>
                 </div>
@@ -94,7 +107,7 @@
                 <div class="container">
 
                    <?php
-                   if($_SESSION['tipoUsuario'] == "Administrador"){    
+                   if(isset($_SESSION['tipoUsuario']) && $_SESSION['tipoUsuario'] == "Alumno"){    
                    ?>
                    <h2>ABM Alumnos</h2>
                    <hr class="star-light">
@@ -236,6 +249,7 @@
                     ?>
                     <div class="container">
                     <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
+                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                     </div>
                     <?php
                     }
@@ -243,7 +257,7 @@
 
                 </div>
               </header>
-    
+              <?php include("pieDePagina.php"); ?>
     <script src="validacion.js"></script>
 </body>
 
