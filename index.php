@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
   <head>
@@ -49,7 +50,22 @@
                   }
                 else{
                     $usuario = $_SESSION['nombre'];
-                    ?><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="perfil.php">Hola, <?php echo $usuario ?></a><?php
+                    ?><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="
+                    <?php
+                    
+                    if($_SESSION['tipoUsuario'] == "Administrador"){
+                      echo "menuAdministrador.php";
+                      }
+                      else if($_SESSION['tipoUsuario'] == "Alumno"){
+                      echo "menuAlumno.php";           
+                      }
+                  
+                      else if($_SESSION['tipoUsuario'] == "Docente"){
+                      echo "menuDocente.php";
+                      }
+
+                    ?>
+                    ">Hola, <?php echo $usuario ?></a><?php
                     ?>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">

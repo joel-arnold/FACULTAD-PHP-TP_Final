@@ -13,17 +13,16 @@
         $hora= date("H :i:s");
         $correoDestino="joel.arnold.ar@gmail.com";
         $telefono = $_POST['phone'];
-        $asunto="Contacto de ".$nombre." a través la web.";
-        $correoEmisor=$_POST['email'];
-        $comentario = $_POST['message'];
-        $cuerpoMensaje= "
+        $asunto="Contacto de un usuario a través la web.";
+        $correoEmisor="$_POST['email'];"
+        $comentario=$_POST['message'];
+        $cuerpoMensaje="
         \n
         Nombre: $nombre\n
         Email: $correoEmisor\n
         Teléfono: $telefono\n
         Consulta: $comentario\n
         Enviado: $fecha a las $hora\n
-        \n
         ";
 
         //ini_set("SMTP", "smtp.gmail.com");

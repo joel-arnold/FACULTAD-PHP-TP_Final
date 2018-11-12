@@ -40,7 +40,7 @@
     ?>
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
                 <div class="container">
-                  <a class="navbar-brand js-scroll-trigger" href="#page-top">Sistema Académico</a>
+                  <a class="navbar-brand js-scroll-trigger" href="index.php">Sistema Académico</a>
                   <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -141,14 +141,8 @@
                                                 <label for="tipoUSuario" class="label-sm-2">Tipo de usuario (*)</label>
                                                 <div class="input-sm-5">
                                                 <select class="form-control" name="tipoUsuario" id="tipoUSuario">
-
-                                                        <option>Seleccione tipo de usuario</option>
-                                                        
-                                                        <option>Alumno</option>
                                                         
                                                         <option>Docente</option>
-
-                                                        <option>Director</option>
                                                         
                                                 </select>
                                                   </div>

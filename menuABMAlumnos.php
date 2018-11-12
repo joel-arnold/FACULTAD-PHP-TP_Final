@@ -144,18 +144,12 @@
                                                     </div>
                                         </div>
 
-                                         <div class="form-group">
+                                        <div class="form-group">
                                                 <label for="tipoUSuario" class="label-sm-2">Tipo de usuario (*)</label>
                                                 <div class="input-sm-5">
                                                 <select class="form-control" name="tipoUsuario" id="tipoUSuario">
-
-                                                        <option>Seleccione tipo de usuario</option>
                                                         
                                                         <option>Alumno</option>
-                                                        
-                                                        <option>Docente</option>
-
-                                                        <option>Director</option>
                                                         
                                                 </select>
                                                   </div>
