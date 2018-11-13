@@ -104,7 +104,7 @@
                 <div class="container">
 
                    <?php
-                   if(isset($_SESSION['tipoUsuario']) && $_SESSION['tipoUsuario'] == "Alumno"){    
+                   if(isset($_SESSION['tipoUsuario']) && $_SESSION['tipoUsuario'] == "Administrador"){    
                    ?>
                    <h2>ABM Alumnos</h2>
                    <hr class="star-light">
