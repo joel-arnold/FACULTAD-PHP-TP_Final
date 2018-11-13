@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -36,7 +37,6 @@
 <body id="page-top">
     
     <?php
-    session_start();
     include("conexion.php");
     ?>
 

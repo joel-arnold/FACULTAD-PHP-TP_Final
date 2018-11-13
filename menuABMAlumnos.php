@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -33,10 +34,6 @@
 
 </head>
 <body id="page-top">
-    
-    <?php
-    session_start();
-    ?>
 
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
                 <div class="container">

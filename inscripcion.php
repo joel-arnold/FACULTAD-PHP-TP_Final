@@ -1,7 +1,5 @@
 <?php
-
     session_start();
-
     include("conexion.php");
 
     $legajo = $_SESSION['legajo'];

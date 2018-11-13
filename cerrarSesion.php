@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +9,6 @@
 
 <body>
 <?php
-    session_start();
         if(!isset($_SESSION['legajo'])){
             echo "<script>
                     window.location.href='index.php';

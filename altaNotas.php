@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -35,7 +36,6 @@
 <body id="page-top">
 <?php
     include("conexion.php");
-    session_start();
     ?>
 
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
