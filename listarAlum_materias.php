@@ -4,7 +4,7 @@
 <html lang="es">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
@@ -81,7 +81,10 @@ include("conexion.php");
     $resultado = mysqli_query($link, $alumnos) or die(mysqli_error($link));
   
     if(mysqli_num_rows($resultado)==0){
-        echo  "<script>alert('No hay alumnos inscriptos');</script>";
+        echo  "<script>
+                alert('No hay alumnos inscriptos');
+                window.location.replace('altaNotas.php');
+                </script>";
         
     }else{
          $consulta = "select nombre_materia from materia where id_materia='$materia'";
