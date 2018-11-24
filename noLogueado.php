@@ -1,12 +1,3 @@
-<?php
-  session_start();
-
-  if(!$_SESSION['tipoUsuario'] == "alumno"){
-    header("Location: noLogueado.php");
-    exit();
-  }
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -41,18 +32,23 @@
 
   <header class="masthead bg-primary text-white text-center">
     <div class="container">
-    <div class="menu">
+        <br /><br /><br /><br /><br /><br />
+        <h4 class="text-uppercase mb-0">Usted no tiene autorización para ingresar a esta sección o no inició sesión</h4>
         <br />
-        <br />
-        <h2>Menú Alumnos</h2>
-        <br />
-        <br />
-        <a href="inscripcionMaterias.php">Inscripción a materias</a>
-        <br />
-        <br />
-        <a href="estadoAcademico.php">Estado académico</a>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </div>
+        <h5 class="text-uppercase mb-0">Puede volver al inicio o iniciar sesión con una cuenta diferente</h5>
+        <br /><br /><br />
+        <div class="text-center mt-4">
+          <a class="btn btn-xl btn-outline-light" href="index.php">
+            <i class="fas fa-home mr-2"></i>
+            Volvé al inicio
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-xl btn-outline-light" href="iniciarSesion.php">
+            <i class="fas fa-forward mr-2"></i>
+            Iniciá sesión
+          </a>
+        </div>
+        <br /><br /><br />
     </div>
   </header>
   <?php include("pieDePagina.php"); ?>

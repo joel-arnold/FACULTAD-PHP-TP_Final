@@ -1,5 +1,6 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="es">
   
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -28,45 +29,39 @@
 </head>
 
 <body id="page-top">
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-            <div class="container">
-                    <a class="navbar-brand js-scroll-trigger" href="index.php">Sistema Académico</a>    </nav>
+    
+<?php include("encabezado.php"); ?>
+
         <header class="masthead bg-primary text-white text-center">
                 <div class="container">
                      <h2>Iniciar Sesión</h2>
                      <hr class="star-light">
-                <div class="formLogin">
-                    <form class="form-horizontal" role="form" action="login.php" method="POST" name="formlogin">
-                        <div class="form-group">
-                             <label for="inputlegajo" class="label-sm-2">Legajo</label>
-                            <div class="input-sm-5">
-                               <input type="legajo" class="form-control" id="inputlegajo" name="legajo" placeholder="Legajo" />
-                             </div>
-                         </div>
-                          <div class="form-group">
-                           <label for="inputpassword" class="label-sm-2">Contraseña</label>
-                          <div class="input-sm-5">
-                             <input type="password" class="form-control" id="inputpassword" name="contrasena" placeholder="Contraseña" />
-                           </div>
-                         </div>
-                         <div class="form-group">
-                                <!--<div class="col-sm-offset-2 col-sm-10">
-                                  <div class="linkRegistrar">
-                                    <label>
-                                      <a id="registrarse" href="altaUsuario.html">Registrarse</a>
-                                    </label>
+                      <div class="formLogin">
+                          <form class="form-horizontal" role="form" action="login.php" method="POST" name="formlogin">
+                              <div class="form-group">
+                                  <label for="inputlegajo" class="label-sm-2">Legajo</label>
+                                  <div class="input-sm-5">
+                                    <input type="legajo" class="form-control" id="inputlegajo" name="legajo" placeholder="Legajo" />
                                   </div>
-                                </div>-->
-                            </div>
-                         <div class="form-group">
-                              <div class="boton-sm-offset-2">
-                                <button type="submit" class="btn btn-default">Iniciar Sesion</button>
-                             </div>
-                        </div>
+                              </div>
+                                <div class="form-group">
+                                <label for="inputpassword" class="label-sm-2">Contraseña</label>
+                                  <div class="input-sm-5">
+                                    <input type="password" class="form-control" id="inputpassword" name="contrasena" placeholder="Contraseña" />
+                                  </div>
+                                </div>
+                              <div class="form-group">
+                                </div>
+                              <div class="form-group">
+                                    <div class="boton-sm-offset-2">
+                                      <button type="submit" class="btn btn-default">Iniciar Sesion</button>
+                                    </div>
+                              </div>
                         </form>
                     </div>
             </div>
-            <br /><br />
+        </header>
+    <?php include("pieDePagina.php"); ?>  
 </body>
-<?php include('pieDePagina.php');?>
+
 </html>

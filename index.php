@@ -55,6 +55,7 @@
                   <i class="fas fa-search-plus fa-3x"></i>
                 </div>
               </div>
+              <h6 class="text-secondary text-center text-uppercase mb-0">Colación de alumnos 2017-2018</h6>
               <img class="img-fluid" src="img/portfolio/graduados.png" alt="Colación de alumnos 2017-2018">
             </a>
           </div>
@@ -65,7 +66,8 @@
                   <i class="fas fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/UTNabrepuertas.png" alt="UTN abrió sus puertas">
+              <h6 class="text-secondary text-center text-uppercase mb-0">La UTN abrió sus puertas</h6>
+              <img class="img-fluid" src="img/portfolio/sum1.png" alt="UTN abrió sus puertas">
             </a>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -75,6 +77,7 @@
                   <i class="fas fa-search-plus fa-3x"></i>
                 </div>
               </div>
+              <h6 class="text-secondary text-center text-uppercase mb-0">Jordana de emprendedores</h6>
               <img class="img-fluid" src="img/portfolio/emprendedores.png" alt="Emprendedores de la UTN">
             </a>
           </div>
@@ -133,7 +136,7 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">Actos de Colación de Grados 2017 - 2018</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/graduados.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/graduados.png" alt="Graduados">
               <p class="mb-5">Invitamos a la comunidad educativa a los Actos de Colación de Grados que se realizarán en el SUM de la Facultad (Zeballos 1341), de acuerdo al siguiente cronograma:
               <br />
               28/11/2018 - 19:30 hs. - Ingeniería Civil, Ingeniería Eléctrica e Ingeniería Mecánica.
@@ -165,7 +168,7 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">La UTN abrió sus puertas</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/UTNabrepuertas.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/sum1.png" alt="SUM">
               <p class="mb-5">El Área Ingreso realizó el día viernes 26 de octubre, de 8:45 a 12:30 hs.,  en el edifico sede, Zeballos 1341, la jornada la Universidad abre sus puertas. En esta oportunidad, alrededor de 200 alumnos de ocho instituciones educativas visitaron los Departamentos Académicos, sus aulas, laboratorios, instalaciones y conversaron  sobre las Carreras de ingeniería que se dictan en nuestra facultad. Consultas: ingreso@frro.utn.edu.ar</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
@@ -187,7 +190,7 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">Actividad del Club de Emprendedores</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/emprendedores.png" alt="">
+              <img class="img-fluid mb-5" src="img/portfolio/emprendedores.png" alt="Emprendedores">
               <p class="mb-5">En el marco de la “Semana del Emprendedorimos” llega la “Noche de los Clubes” un encuentro en paralelo con todos los clubes del país. Se va a realizar el día 15 de Noviembre de 15:00 a 17:30 horas en el Club de Emprendedores de Rosario (San Martin 1080, Esq San Juan)   Vamos a contar con una actividad de Networking: Que el objetivo de la misma es que todos los actores reconozcan el potencial que tienen como grupo a partir de la colaborar con las necesidades del otro. La misma será moderada por un formador de Academia. Vamos a contar para esta con la presencia de Ivo Kraljev y Gabriel Freites, creadores de Arbanit Fellow, que nos va a contar su recorrido por el club y su experiencia.   También queremos que sean parte de la final de 18:00 a 20:00 de la “Competencia de planes de negocios” ,es una propuesta organizada por la Municipalidad de Rosario, a través de la Secretaría de Producción, JCI Rosario, la Agencia de Desarrollo Región Rosario, ENDEAVOR Rosario, el Gobierno de Santa Fe, a través del Ministerio de Ciencia, Tecnología e Innovación Productiva de Santa Fe y del Ministerio de la Producción, la Universidad Nacional de Rosario, Universidad Abierta Interamericana y la Aceleradora Bio.r. Su finalidad fue apoyar y capacitar a emprendedores para transformar sus ideas y proyectos de negocios en emprendimientos sostenibles, a través de un proceso continuo de aprendizaje e intercambio, en un plan de negocio.    Los participantes después de un año de trabajo, podrá saber quién es el ganador y queremos que estés presente junto a ellos.   Después de un año lleno de actividades y encuentros, los esperamos a todos para compartir un cóctel de bebida y comida en lo que va a ser la última actividad del Club de Emprendedores. ¡Los esperamos a todos!</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
