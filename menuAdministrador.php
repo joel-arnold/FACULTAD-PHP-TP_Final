@@ -46,9 +46,21 @@
         <hr class="star-light black">
         <div class="menu">
             <ul class="list-unstyled">
-              <li><a href="menuABMAlumnos.php"><h4>ABM Alumnos</h4></a></li>
-              <li><a href="menuABMDocentes.php"><h4>ABM Docentes</h4></a></li>
-              <li><a href="listadoUsuarios.php"><h4>Listado de usuarios</h4></a></li>
+              <li>
+                <h4>ALUMNOS</h4>
+                <li><a href="altaAlumnos.php"><h5>Alta</h5></a></li>
+                <li><a href="bajaAlumnos.php"><h5>Baja</h5></a></li>
+                <li><a href="modificacionAlumnos.php"><h5>Modificación</h5></a></li>
+                <li><a href="listadoAlumnos.php"><h5>Listado</h5></a></li>
+              </li>
+              <br />
+              <li>
+                <h4>DOCENTES</h4>
+                <li><a href="altaDocentes.php"><h5>Alta</h5></a></li>
+                <li><a href="bajaDocentes.php"><h5>Baja</h5></a></li>
+                <li><a href="modificacionDocentes.php"><h5>Modificación</h5></a></li>
+                <li><a href="listadoDocentes.php"><h5>Listado</h5></a></li>
+              </li>
             </ul>
         </div>
       </div>
