@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php
+  session_start();
+
+  if(!$_SESSION['tipoUsuario'] == "docente"){
+    header("Location: noLogueado.php");
+    exit();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   
@@ -28,78 +36,27 @@
 
 </head>
 <body id="page-top">
-        <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-                <div class="container">
-                  <a class="navbar-brand js-scroll-trigger" href="index.php">Sistema Académico</a>
-                  <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                      <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuDocente.php">
-                          <?php
-                            if(isset($_SESSION['nombre'])){
-                              echo $_SESSION['nombre'];
-                            }
-                            else{
-                              echo "No logueado";
-                            }
-                          ?>
-                        </a>
-                      </li>
-                      <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">
-                          <?php
-                            if(!isset($_SESSION['tipoUsuario'])){
-                              echo "Volver al incio";
-                            }
-                            else{
-                              echo "Cerrar sesión";
-                            }
-                          ?>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        <header class="masthead bg-primary text-white text-center">
-        <div class="header">
-            
-            <div class="container">
-            <div class="menu">
-            <?php
-              if(isset($_SESSION['tipoUsuario']) && $_SESSION['tipoUsuario'] == "Docente"){
-            ?>
-            
-                <h2>MENU DOCENTES</h2>
-                <br /><br /><br />
-                <a href="altaNotas.php">
-                  <h3 class="font-weight-light mb-0">Cargar notas</h3>
-                </a>
-                <br>
-                <a href="listadoComisiones.php">
-                  <h3 class="font-weight-light mb-0">Listado de comisiones</h3>
-                </a>
-                <?php
-            }
-            else{
-            ?>
-                <div class="container">
-                <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
-                </div>
-                <?php
-                }
-            ?>
-                
-            </div>
-            </div>
-   
+        
+  <?php include("encabezado.php"); ?>
+  
+  <header class="masthead bg-primary text-black text-center">
+      <div class="container">
+        <h2 class="text-uppercase mb-0">Menú Docente</h2>
+        <hr class="star-light black">
+        <div class="menu">
+          <a class="mb-3" href="altaNotas.php">
+            <h2 >Carga de notas</h2>
+          </a>
+          <br />
+          <a class="mb-3" href="listadoComisiones.php">
+            <h2>Listado de comisiones</h2>
+          </a>
         </div>
+      </div>
+      <br /><br /><br /><br />
+    </header>
 
-        </header>
-        <?php include("pieDePagina.php"); ?>
+  <?php include("pieDePagina.php"); ?>
+
 </body>
 </html>

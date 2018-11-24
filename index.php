@@ -66,7 +66,7 @@
                   <i class="fas fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <h6 class="text-secondary text-center text-uppercase mb-0">La UTN abrió sus puertas</h6>
+              <h6 class="text-secondary text-center text-uppercase mb-0">La institución abrió sus puertas</h6>
               <img class="img-fluid" src="img/portfolio/sum1.png" alt="UTN abrió sus puertas">
             </a>
           </div>
@@ -77,7 +77,7 @@
                   <i class="fas fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <h6 class="text-secondary text-center text-uppercase mb-0">Jordana de emprendedores</h6>
+              <h6 class="text-secondary text-center text-uppercase mb-0">Jornada de emprendedores</h6>
               <img class="img-fluid" src="img/portfolio/emprendedores.png" alt="Emprendedores de la UTN">
             </a>
           </div>

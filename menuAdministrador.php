@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php
+  session_start();
+
+  if(!$_SESSION['tipoUsuario'] == "administrador"){
+    header("Location: noLogueado.php");
+    exit();
+  }
+?>
+
 <!DOCTYPE html>
 
 <html lang="es">
@@ -29,76 +37,26 @@
 
 </head>
 <body id="page-top">
-        <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-                <div class="container">
-                  <a class="navbar-brand js-scroll-trigger" href="index.php">Sistema Académico</a>
-                  <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                      <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuAdministrador.php"> 
-                        <?php
-                          if(isset($_SESSION['nombre'])){
-                            echo $_SESSION['nombre'];
-                          }
-                          else{
-                            echo "No logueado";
-                          }
-                        ?>    
-                        </a>
-                      </li>
-                      <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">
-                            <?php
-                            if(!isset($_SESSION['tipoUsuario'])){
-                                echo "Volver al incio";
-                            }
-                            else{
-                                echo "Cerrar sesión";
-                            }
-                            ?>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        <header class="masthead bg-primary text-white text-center">
+    
+    <?php include("encabezado.php"); ?>
 
-        <div class="header">
-                <!--<div class="migaja">
-                    <ol class="breadcrumb">
-                        <li><a href="index.html">Inicio / </a></li>
-                        <li class="active">Menú Administrador</li>      
-                    </ol>
-                </div>-->
-            <div class="container">
-                <?php
-                if(isset($_SESSION['tipoUsuario']) && $_SESSION['tipoUsuario'] == "Administrador"){
-                    ?>
-                    <div class="menu">
-                    <h2>Menú Administrador</h2>
-                    <br>
-                    <br>
-                    <a href="menuABMAlumnos.php">ABCM Alumnos</a>
-                    <br>
-                    <br>
-                    <a href="menuABMDocentes.php">ABCM Docentes</a>
-                    </div>
-                <?php
-                    }
-                else{
-                    ?><h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
-                    <?php
-                }
-                ?>
-            </div>
+      <header class="masthead bg-primary text-black text-center">
+      <div class="container">
+        <h2 class="text-uppercase mb-0">Menú Administrador</h2>
+        <hr class="star-light black">
+        <div class="menu">
+            <ul class="list-unstyled">
+              <li><a href="menuABMAlumnos.php"><h4>ABM Alumnos</h4></a></li>
+              <li><a href="menuABMDocentes.php"><h4>ABM Docentes</h4></a></li>
+              <li><a href="listadoUsuarios.php"><h4>Listado de usuarios</h4></a></li>
+            </ul>
         </div>
-        </header>
-        <?php include("pieDePagina.php"); ?>
+      </div>
+      <br /><br /><br /><br />
+    </header>
+    
+    <?php include("pieDePagina.php"); ?>
+    
 </body>
 
 </html>
