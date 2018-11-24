@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 
 <html lang="es">
-    
+
   <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,62 +29,8 @@
   </head>
 
   <body id="page-top">
-    
-    
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.php">Sistema Académico</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <?php
-                
-                if (!isset($_SESSION['legajo']))
-                  {
-                    ?><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="iniciarSesion.php">Iniciar Sesión</a><?php
-                  }
-                else{
-                    $usuario = $_SESSION['nombre'];
-                    ?><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="
-                    <?php
-                    
-                    if($_SESSION['tipoUsuario'] == "Administrador"){
-                      echo "menuAdministrador.php";
-                      }
-                      else if($_SESSION['tipoUsuario'] == "Alumno"){
-                      echo "menuAlumno.php";           
-                      }
-                  
-                      else if($_SESSION['tipoUsuario'] == "Docente"){
-                      echo "menuDocente.php";
-                      }
-
-                    ?>
-                    ">Hola, <?php echo $usuario ?></a><?php
-                    ?>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                      <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">Cerrar Sesión</a>
-                    <?php
-                }
-              ?>
-            </li>
-            <!--<li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Sobre Nosotros</a>
-            </li>-->
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contactanos</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <?php include("encabezado.php"); ?>
 
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
@@ -96,107 +42,76 @@
       </div>
     </header>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio" id="portfolio">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Contactanos</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">NOVEDADES</h2>
         <hr class="star-dark mb-5">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-            <form name="sentMessage" id="contactForm" novalidate="novalidate" action="enviaCorreo.php" method="post">
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label title="etiqNombre">Nombre</label>
-                  <input title="nombrecito" class="form-control" id="name" name="nombrecito" type="text" placeholder="Nombre" required="required" data-validation-required-message="Por favor, ingrese su nombre.">
-                  <p class="help-block text-danger"></p>
+          <div class="col-md-6 col-lg-4">
+            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                  <i class="fas fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label title="etiqEmail">Email</label>
-                  <input class="form-control" name="email" id="email" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, ingrese su correo electrónico.">
-                  <p class="help-block text-danger"></p>
+              <img class="img-fluid" src="img/portfolio/graduados.png" alt="Colación de alumnos 2017-2018">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                  <i class="fas fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label title="etiqTelefono">Teléfono</label>
-                  <input class="form-control" name="phone" id="phone" type="tel" placeholder="Tel&eacute;fono" required="required" data-validation-required-message="Por favor, ingrese su número de teléfono.">
-                  <p class="help-block text-danger"></p>
+              <img class="img-fluid" src="img/portfolio/UTNabrepuertas.png" alt="UTN abrió sus puertas">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                  <i class="fas fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label title="etiqMensaje">Mensaje</label>
-                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="Mensaje" required="required" data-validation-required-message="Debe escribir un mensaje."></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <br>
-              <div id="success"></div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
-              </div>
-            </form>
+              <img class="img-fluid" src="img/portfolio/emprendedores.png" alt="Emprendedores de la UTN">
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer text-center">
+    <!-- About Section -->
+    <section class="bg-primary text-white mb-0" id="about">
       <div class="container">
+        <h2 class="text-center text-uppercase text-white">Acerca de nosotros</h2>
+        <hr class="star-light mb-5">
         <div class="row">
-          <div class="col-md-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Dirección</h4>
-            <p class="lead mb-0">Zeballos 1341
-              <br>2000 - Rosario, Santa Fe</p>
+          <div class="col-lg-4 ml-auto">
+            <p class="lead">Somos una institución educativa pública que persigue los más altos estándares de calidad. Nuestro objetivo es formar ingenieros de calidad para acompañar el desarrollo de la Industria Nacional.</p>
           </div>
-          <div class="col-md-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Nuestras redes</h4>
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="http://www.facebook.com">
-                  <i class="fab fa-fw fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://plus.google.com/">
-                  <i class="fab fa-fw fa-google-plus-g"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://twitter.com/?lang=es">
-                  <i class="fab fa-fw fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://ar.linkedin.com/">
-                  <i class="fab fa-fw fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://dribbble.com/">
-                  <i class="fab fa-fw fa-dribbble"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h4 class="text-uppercase mb-4">Acerca de nuestro sitio</h4>
-            <p class="lead mb-0">Sitio creado como parte del Trabajo Práctico de Aprobación Directa de la materia Entornos Gráficos.</p>
+          <div class="col-lg-4 mr-auto">
+            <p class="lead" > Nuestras carreras:
+              <ul>
+                <li>Ingeniería en Sistemas de Información</li>
+                <li>Ingeniería Química</li>
+                <li>Ingeniería Civil</li>
+                <li>Ingeniería Mecánica</li>
+              </ul>
+            </p>
           </div>
         </div>
+        <div class="text-center mt-4">
+          <a class="btn btn-xl btn-outline-light" href="contacto.php">
+            <i class="fas fa-envelope mr-2"></i>
+            ¡Contactanos y enterate de como podés formar parte de nuestra institución!
+          </a>
+        </div>
       </div>
-    </footer>
+    </section>
 
-    <div class="copyright py-4 text-center text-white">
-      <div class="container">
-        <small>Copyright &copy; Cardoso & Arnold - Entornos Gráficos 2018</small>
-      </div>
-    </div>
+    <?php include("pieDePagina.php"); ?>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">
@@ -216,13 +131,23 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+              <h2 class="text-secondary text-uppercase mb-0">Actos de Colación de Grados 2017 - 2018</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cabin.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+              <img class="img-fluid mb-5" src="img/portfolio/graduados.png" alt="">
+              <p class="mb-5">Invitamos a la comunidad educativa a los Actos de Colación de Grados que se realizarán en el SUM de la Facultad (Zeballos 1341), de acuerdo al siguiente cronograma:
+              <br />
+              28/11/2018 - 19:30 hs. - Ingeniería Civil, Ingeniería Eléctrica e Ingeniería Mecánica.
+              <br />
+              29/11/2018 - 19:30 hs. - Ingeniería Química y Técnico Universitario en Química.
+              <br />
+              30/11/2018 - 19:30 hs. - Ingeniería en Sistemas de Información y Analista Universitario de Sistemas.
+              <br />
+              Los programas ya están disponibles y puede retirarse en la Secretaría de Extensión Universitaria.
+              <br />
+              Informes: seu@frro.utn.edu.ar</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Close Project</a>
+                Cerrar noticia</a>
             </div>
           </div>
         </div>
@@ -238,13 +163,13 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+              <h2 class="text-secondary text-uppercase mb-0">La UTN abrió sus puertas</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cake.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+              <img class="img-fluid mb-5" src="img/portfolio/UTNabrepuertas.png" alt="">
+              <p class="mb-5">El Área Ingreso realizó el día viernes 26 de octubre, de 8:45 a 12:30 hs.,  en el edifico sede, Zeballos 1341, la jornada la Universidad abre sus puertas. En esta oportunidad, alrededor de 200 alumnos de ocho instituciones educativas visitaron los Departamentos Académicos, sus aulas, laboratorios, instalaciones y conversaron  sobre las Carreras de ingeniería que se dictan en nuestra facultad. Consultas: ingreso@frro.utn.edu.ar</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Close Project</a>
+                Cerrar noticia</a>
             </div>
           </div>
         </div>
@@ -260,79 +185,13 @@
         <div class="container text-center">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+              <h2 class="text-secondary text-uppercase mb-0">Actividad del Club de Emprendedores</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/circus.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+              <img class="img-fluid mb-5" src="img/portfolio/emprendedores.png" alt="">
+              <p class="mb-5">En el marco de la “Semana del Emprendedorimos” llega la “Noche de los Clubes” un encuentro en paralelo con todos los clubes del país. Se va a realizar el día 15 de Noviembre de 15:00 a 17:30 horas en el Club de Emprendedores de Rosario (San Martin 1080, Esq San Juan)   Vamos a contar con una actividad de Networking: Que el objetivo de la misma es que todos los actores reconozcan el potencial que tienen como grupo a partir de la colaborar con las necesidades del otro. La misma será moderada por un formador de Academia. Vamos a contar para esta con la presencia de Ivo Kraljev y Gabriel Freites, creadores de Arbanit Fellow, que nos va a contar su recorrido por el club y su experiencia.   También queremos que sean parte de la final de 18:00 a 20:00 de la “Competencia de planes de negocios” ,es una propuesta organizada por la Municipalidad de Rosario, a través de la Secretaría de Producción, JCI Rosario, la Agencia de Desarrollo Región Rosario, ENDEAVOR Rosario, el Gobierno de Santa Fe, a través del Ministerio de Ciencia, Tecnología e Innovación Productiva de Santa Fe y del Ministerio de la Producción, la Universidad Nacional de Rosario, Universidad Abierta Interamericana y la Aceleradora Bio.r. Su finalidad fue apoyar y capacitar a emprendedores para transformar sus ideas y proyectos de negocios en emprendimientos sostenibles, a través de un proceso continuo de aprendizaje e intercambio, en un plan de negocio.    Los participantes después de un año de trabajo, podrá saber quién es el ganador y queremos que estés presente junto a ellos.   Después de un año lleno de actividades y encuentros, los esperamos a todos para compartir un cóctel de bebida y comida en lo que va a ser la última actividad del Club de Emprendedores. ¡Los esperamos a todos!</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/game.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/safe.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/submarine.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+                Cerrar noticia</a>
             </div>
           </div>
         </div>

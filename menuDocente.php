@@ -74,13 +74,15 @@
               if(isset($_SESSION['tipoUsuario']) && $_SESSION['tipoUsuario'] == "Docente"){
             ?>
             
-                <h2>Menú Docentes</h2>
+                <h2>MENU DOCENTES</h2>
+                <br /><br /><br />
+                <a href="altaNotas.php">
+                  <h3 class="font-weight-light mb-0">Cargar notas</h3>
+                </a>
                 <br>
-                <br>
-                <a href="altaNotas.php">Cargar Notas</a>
-                <br>
-                <br>
-                <a href="listadoComisiones.php">Comisiones</a>
+                <a href="listadoComisiones.php">
+                  <h3 class="font-weight-light mb-0">Listado de comisiones</h3>
+                </a>
                 <?php
             }
             else{

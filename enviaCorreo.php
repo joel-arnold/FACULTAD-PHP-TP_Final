@@ -24,11 +24,7 @@
         Consulta: $comentario\n
         Enviado: $fecha a las $hora\n
         ";
-
-        //ini_set("SMTP", "smtp.gmail.com");
-        //ini_set("sendmail_from", "joel.arnold.ar@gmail.com");
-        //ini_set("smtp_port", "587");
-
+        
         mail($correoDestino, $asunto, $cuerpoMensaje, $correoEmisor);
         echo "<script>window.alert('Consulta enviada. Gracias por contactarnos.');</script>";
 
