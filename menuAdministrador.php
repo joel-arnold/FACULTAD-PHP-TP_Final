@@ -41,10 +41,12 @@
     <?php include("encabezado.php"); ?>
 
       <header class="masthead bg-primary text-black text-center">
+
       <div class="container">
         <h2 class="text-uppercase mb-0">Menú Administrador</h2>
         <hr class="star-light black">
-        <div class="menu">
+        <div class="row">
+          <div class="col-md-6 menu">
             <ul class="list-unstyled">
               <li>
                 <h4>ALUMNOS</h4>
@@ -53,7 +55,10 @@
                 <li><a href="modificacionAlumnos.php"><h5>Modificación</h5></a></li>
                 <li><a href="listadoAlumnos.php"><h5>Listado</h5></a></li>
               </li>
-              <br />
+            </ul>
+          </div>
+          <div class="col-md-6 menu">
+            <ul class="list-unstyled">
               <li>
                 <h4>DOCENTES</h4>
                 <li><a href="altaDocentes.php"><h5>Alta</h5></a></li>
@@ -62,9 +67,10 @@
                 <li><a href="listadoDocentes.php"><h5>Listado</h5></a></li>
               </li>
             </ul>
+          </div>
         </div>
       </div>
-      <br /><br /><br /><br />
+      <br /><br />
     </header>
     
     <?php include("pieDePagina.php"); ?>

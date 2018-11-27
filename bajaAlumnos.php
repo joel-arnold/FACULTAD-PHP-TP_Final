@@ -49,10 +49,11 @@
         <h2 class="font-weight-light mb-0">BAJA DE ALUMNOS</h2>
             <hr class="star-light">
             <div class="container">
-                    <div class="formModifAlumnos">
-                        <form class="form-horizontal" role="form" action="bajaPersonas.php" method="POST" name="formBaja" onSubmit="validarBorrado()">
+                <div class="row">
+                    <div class="col-md-6 formModifAlumnos">
+                        <form class="form-horizontal" role="form" action="bajaPersonasLegajo.php" method="POST" name="formBaja" onSubmit="validarBorrado()">
                             <div class="form-group">
-                                <label for="inputLegajoBaja" class="label-sm-2">Legajo del alumno que desea buscar:</label>
+                                <label for="inputLegajoBaja" class="label-sm-2">Eliminación por legajo:</label>
                                 <div class="input-sm-5">
                                     <input type="text" class="form-control" id="inputLegajoBaja" name="legajo" placeholder="Legajo"/>
                                 </div>
@@ -65,7 +66,43 @@
                             </div>
                         </form>
                     </div>
+                    <div class="col-md-6 formModifAlumnos">
+                        <form class="form-horizontal" role="form" action="bajaPersonasNombre.php" method="POST" name="formBaja" onSubmit="validarBorrado()">
+                            <div class="form-group">
+                                <label for="inputLegajoBaja" class="label-sm-2">Eliminación por nombre:</label>
+                                <div class="input-sm-5">
+                                    <select class="form-control" name="nombreElegido" id="inputLegajoBaja">
+                                            <?php
+                                                include("conexion.php");
+                                                $vSQL = "select * from usuario where tipo_usuario = 'Alumno'";
+                                                $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
+                                                $cant_filas = mysqli_num_rows($vResultado);
+                                                if($cant_filas == 0){
+                                                    ?> <option>No hay alumnos cargados</option> <?php
+                                                    }
+                                                    else{
+                                                        while ($fila = mysqli_fetch_array($vResultado)){
+                                                            ?>
+                                                            <option> <?php echo $fila['nombre_apellido']; ?> </option>
+                                                            <?php
+                                                        }
+                                                        mysqli_free_result($vResultado);
+                                                        mysqli_close($link);
+                                                    }
+                                            ?>                                            
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="boton-sm-offset-2">
+                                <button type="submit" class="btn btn-default">Borrar</button>
+                                <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+            </div>
     </header>
 
     <?php include("pieDePagina.php"); ?>

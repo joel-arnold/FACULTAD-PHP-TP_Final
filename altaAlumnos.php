@@ -17,7 +17,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Menú ABM Alumnos</title>
+    <title>Alta de alumnos</title>
 
     
    <!-- Bootstrap core CSS -->
@@ -38,8 +38,6 @@
 
     <link href="estilo.css" rel="stylesheet" type="text/css" />
 
-    
-
 </head>
 <body id="page-top">
 
@@ -49,68 +47,68 @@
         <div class="container">
         <h2 class="font-weight-light mb-0">ALTA DE ALUMNOS</h2>
             <hr class="star-light">
-            <section class="porfolio" id="alta">                        
-                    <form class="form-horizontal" role="form" action="altaPersonas.php" method="POST" name="formalta">
-                        <div class="form-group">
-                        <label for="inputnomyape" class="label-sm-2">Nombre y Apellido (*)</label>
+            <form class="form-horizontal" role="form" action="altaPersonas.php" method="POST" name="formalta">
+                <div class="form-group">
+                <label for="inputnomyape" class="label-sm-2">Nombre y Apellido (*)</label>
+                <div class="input-sm-5">
+                    <input type="text" class="form-control" id="inputnomyape" name="nomyape" placeholder="Nombre y apellido" />
+                </div>
+                </div>
+                    <div class="form-group">       
+                    <label for="inputemail" class="label-sm-2">Email (*)</label>
                         <div class="input-sm-5">
-                            <input type="text" class="form-control" id="inputnomyape" name="nomyape" placeholder="Nombre y apellido" />
+                            <input type="text" disabled="disabled" style="display:none;" name="email" />
+                            <input type="text" autocomplete="nope" class="form-control" id="inputemail" name="email" placeholder="Email" />
                         </div>
+                    </div>
+                <div class="form-group">       
+                <label for="inputdirec" class="label-sm-2">Dirección (*)</label>
+                    <div class="input-sm-5">
+                        <input type="text" class="form-control" id="inputdirec" name="direccion" placeholder="Dirección" />
+                    </div>
+                </div>
+                <div class="form-group">       
+                    <label for="inputTel" class="label-sm-2">Teléfono (*)</label>
+                        <div class="input-sm-5">
+                            <input type="text" disabled="disabled" style="display:none;" name="telefono" />
+                            <input type="text" class="form-control" id="inputTel" name="telefono" placeholder="Teléfono" />
                         </div>
-                            <div class="form-group">       
-                            <label for="inputemail" class="label-sm-2">Email (*)</label>
-                                <div class="input-sm-5">
-                                    <input type="text" class="form-control" id="inputemail" name="email" placeholder="Email" />
-                                </div>
-                            </div>
-                        <div class="form-group">       
-                        <label for="inputdirec" class="label-sm-2">Dirección (*)</label>
+                </div>
+                <div class="form-group">       
+                    <label for="inputfecha" class="label-sm-2">Fecha de Nacimiento (*)</label>
+                        <div class="input-sm-5">
+                            <input type="date" class="form-control" id="inputfecha" name="fecha_nac" placeholder="DD-MM-AAAA" />
+                        </div>
+                </div>
+                <div class="form-group">       
+                        <label for="inputpass" class="label-sm-2">Contraseña Temporal (*)</label>
                             <div class="input-sm-5">
-                                <input type="text" class="form-control" id="inputdirec" name="direccion" placeholder="Dirección" />
+                                <input type="text" disabled="disabled" style="display:none;" name="password" />
+                                <input type="password" class="form-control" id="inputpass" name="password" placeholder="Asigne una contraseña " />
                             </div>
-                        </div>
-                        <div class="form-group">       
-                            <label for="inputTel" class="label-sm-2">Teléfono (*)</label>
-                                <div class="input-sm-5">
-                                    <input type="text" class="form-control" id="inputTel" name="telefono" placeholder="Teléfono" />
-                                </div>
-                        </div>
-                        <div class="form-group">       
-                            <label for="inputfecha" class="label-sm-2">Fecha de Nacimiento (*)</label>
-                                <div class="input-sm-5">
-                                    <input type="date" class="form-control" id="inputfecha" name="fecha_nac" placeholder="DD-MM-AAAA" />
-                                </div>
-                        </div>
-                        <div class="form-group">       
-                                <label for="inputpass" class="label-sm-2">Contraseña Temporal (*)</label>
-                                    <div class="input-sm-5">
-                                        <input type="password" class="form-control" id="inputpass" name="password" placeholder="Asigne una contraseña " />
-                                    </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="tipoUSuario" class="label-sm-2">Tipo de usuario (*)</label>
-                            <div class="input-sm-5">
-                            <select class="form-control" name="tipoUsuario" id="tipoUSuario">
-                                    <option>Alumno</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="boton-sm-offset-2">        
-                            <input type="submit"  class="btn btn-default" value="Agregar Alumno" onclick="validacion()"/>
-                            <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
-                            </div>
-                            <br>
-                        </div>
-                    </form>                           
-            </section>
+                </div>
+                <div class="form-group">
+                    <label for="tipoUSuario" class="label-sm-2">Tipo de usuario (*)</label>
+                    <div class="input-sm-5">
+                    <select class="form-control" name="tipoUsuario" id="tipoUSuario">
+                            <option>Alumno</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="boton-sm-offset-2">        
+                    <input type="button" class="btn btn-default" value="Agregar Alumno" onclick="validacion()" />
+                    <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
+                    </div>
+                    <br>
+                </div>
+            </form>                           
         </div>
     </header>
 
     <?php include("pieDePagina.php"); ?>
 
-    <script src="validacion.js"></script>
+   <script src="validacion.js"></script>
 
 </body>
 
