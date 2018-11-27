@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php
+  session_start();
+
+  if(!($_SESSION['tipoUsuario'] == "Docente")){
+    header("Location: noLogueado.php");
+    exit();
+  }
+?>
+
 <!DOCTYPE html>
 
 <html lang="es">

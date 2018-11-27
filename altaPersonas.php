@@ -1,10 +1,10 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <title>Alta Alumnos</title>
 
@@ -46,13 +46,17 @@
         values ('$nom_apel', '$email', '$direc', '$telefono','$fec_nac', '$tipo_usu', '$contra')";
 
         mysqli_query($link,$vSQL) or die(mysqli_error($link));
+        $ultimo_id = mysqli_insert_id($link);
 
-        echo '<script type="text/javascript">
-                window.alert("Usuario agregado correctamente");
+        ?>
+
+        <script type="text/javascript">
+                var id = '<?php echo $ultimo_id; ?>';
+                window.alert("Usuario agregado correctamente con el legajo Nº " + id);
                 window.location.href = "menuAdministrador.php";
-				</script>';
+				</script>
 
-
+        <?php
   
 
         mysqli_close($link);
