@@ -76,9 +76,6 @@ function validacion(){
         }        
     }
 
-    if(valido){
-        window.alert("Estaba todo bien");
-    }
     return valido;
 
 }

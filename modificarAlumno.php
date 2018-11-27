@@ -17,7 +17,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Alta de alumnos</title>
+    <title>Modificar alumno</title>
 
     
    <!-- Bootstrap core CSS -->
@@ -38,7 +38,7 @@
 
     <link href="estilo.css" rel="stylesheet" type="text/css" />
 
-    <script src="validacion.js" type="text/javascript"></script>
+    
 
 </head>
 <body id="page-top">
@@ -47,7 +47,7 @@
 
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
-        <h2 class="font-weight-light mb-0">ALTA DE ALUMNOS</h2>
+        <h2 class="font-weight-light mb-0">MODIFICAR ALUMNO</h2>
             <hr class="star-light">
             <form class="form-horizontal" role="form" action="altaPersonas.php" onsubmit="return validacion()" method="POST" name="formalta">
                 <div class="form-group">
@@ -110,20 +110,7 @@
 
     <?php include("pieDePagina.php"); ?>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
+    <script src="validacion.js"></script>
 
 </body>
 

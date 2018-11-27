@@ -1,6 +1,6 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <?php
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     include("conexion.php");
 
     $nom_apel = $_POST['nomyape'];

@@ -13,7 +13,7 @@
 		if(mysqli_num_rows($vResultado)==0){
 
 			echo'<script type="text/javascript">
-				window.alert("Usuario Incorrecto. Ingrese un legajo existente");
+				window.alert("Legajo inexistente. Ingrese otro.");
 				window.location.href = "bajaAlumnos.php";
 				</script>';				
 		}	
