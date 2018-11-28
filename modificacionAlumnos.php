@@ -79,16 +79,16 @@
                                                 $cant_filas = mysqli_num_rows($vResultado);
                                                 if($cant_filas == 0){
                                                     ?> <option>No hay alumnos cargados</option> <?php
+                                                }
+                                                else{
+                                                    while ($fila = mysqli_fetch_array($vResultado)){
+                                                        ?>
+                                                        <option> <?php echo $fila['nombre_apellido']; ?> </option>
+                                                        <?php
                                                     }
-                                                    else{
-                                                        while ($fila = mysqli_fetch_array($vResultado)){
-                                                            ?>
-                                                            <option> <?php echo $fila['nombre_apellido']; ?> </option>
-                                                            <?php
-                                                        }
-                                                        mysqli_free_result($vResultado);
-                                                        mysqli_close($link);
-                                                    }
+                                                    mysqli_free_result($vResultado);
+                                                    mysqli_close($link);
+                                                }
                                             ?>                                            
                                     </select>
                                 </div>

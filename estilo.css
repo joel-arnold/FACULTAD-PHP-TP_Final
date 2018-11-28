@@ -68,11 +68,11 @@
 }
 
 .menu a{
-    color: black;
+    color: rgb(255, 255, 255) !important;
 }
 
 .active{
-    color: black !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .selector{

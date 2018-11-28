@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Modificar Personas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
     <?php
@@ -22,25 +17,19 @@
         $pass = $_POST['password'];
         $tipo_usu = $_POST['tipoUsuario'];
 
-        $vSQL = "update usuario set  nombre_apellido = '$nom_apel',
+        $vSQL = "update usuario set nombre_apellido = '$nom_apel',
             email = '$email', direccion = '$direc', telefono = '$telefono', fecha_nacimiento = '$fec_nac',
             pass = '$pass', tipo_usuario = '$tipo_usu' where legajo = '$legajo'";
 
         mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
         echo '<script type="text/javascript">
-                window.alert("Usuario Modificado con éxito");
-                window.location.href = "menuAdministrador.php";
+                window.alert("Alumno modificado con éxito");
+                window.location.href = "modificacionAlumnos.php";
                 </script>';
-
-
 
         mysqli_close($link);
 
-
-
-
-
-    ?>
+?>
 </body>
 </html>

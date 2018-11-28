@@ -43,50 +43,84 @@
 </head>
 <body id="page-top">
 
-    <?php include("encabezado.php"); ?>
+    <?php
+    include("encabezado.php");
+    include("conexion.php");
+
+    if(!isset($_POST['legajo'])){
+        $identificador = $_POST['nombreElegido'];
+        $vSQL = "select * from usuario where nombre_apellido = '$identificador'";
+    }
+    else{
+        $identificador = $_POST['legajo'];
+        $vSQL = "select * from usuario where legajo = '$identificador'";
+    }
+
+    $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
+
+	$fila = mysqli_fetch_array($vResultado);
+
+	$legajo = $fila['legajo'];
+    $nombre = $fila['nombre_apellido'];
+    $mail = $fila['email'];
+    $direccion = $fila['direccion'];
+    $telefono = $fila['telefono'];
+    $fechaNac = $fila['fecha_nacimiento'];
+    $contrasena = $fila['pass'];
+    $tipoUsuario = $fila['tipo_usuario'];
+    
+
+
+    ?>
 
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
         <h2 class="font-weight-light mb-0">MODIFICAR ALUMNO</h2>
             <hr class="star-light">
-            <form class="form-horizontal" role="form" action="altaPersonas.php" onsubmit="return validacion()" method="POST" name="formalta">
+            <form class="form-horizontal" role="form" action="modifPerson.php" onsubmit="return validacionModificacion()" method="POST" name="formalta">
+            <div class="form-group">
+                <label for="legajo" class="label-sm-2">Legajo</label>
+                    <div class="input-sm-5">
+                        <input type="text" class="form-control" id="inputLegajo" name="legajo" disabled="disabled" value="<?php echo $legajo ?>" />
+                    </div>
+                </div>
                 <div class="form-group">
                 <label for="inputnomyape" class="label-sm-2">Nombre y Apellido (*)</label>
-                <div class="input-sm-5">
-                    <input type="text" class="form-control" id="inputnomyape" name="nomyape" placeholder="Nombre y apellido" />
-                </div>
-                </div>
-                    <div class="form-group">       
-                    <label for="inputemail" class="label-sm-2">Email (*)</label>
-                        <div class="input-sm-5">
-                            <input type="text" disabled="disabled" style="display:none;" name="email" />
-                            <input type="text" autocomplete="nope" class="form-control" id="inputemail" name="email" placeholder="Email" />
-                        </div>
+                    <div class="input-sm-5">
+                        <input type="text" class="form-control" id="inputnomyape" name="nomyape" value="<?php echo $nombre ?>" />
                     </div>
+                </div>
+                <div class="form-group">       
+                <label for="inputemail" class="label-sm-2">Email (*)</label>
+                    <div class="input-sm-5">
+                        <input type="text" disabled="disabled" style="display:none;" name="email" />
+                        <input type="text" autocomplete="nope" class="form-control" id="inputemail" name="email" value="<?php echo $mail ?>" />
+                    </div>
+                </div>
                 <div class="form-group">       
                 <label for="inputdirec" class="label-sm-2">Dirección (*)</label>
                     <div class="input-sm-5">
-                        <input type="text" class="form-control" id="inputdirec" name="direccion" placeholder="Dirección" />
+                        <input type="text" class="form-control" id="inputdirec" name="direccion" value="<?php echo $direccion ?>" />
                     </div>
                 </div>
                 <div class="form-group">       
                     <label for="inputTel" class="label-sm-2">Teléfono (*)</label>
                         <div class="input-sm-5">
                             <input type="text" disabled="disabled" style="display:none;" name="telefono" />
-                            <input type="text" class="form-control" id="inputTel" name="telefono" placeholder="Teléfono" />
+                            <input type="text" class="form-control" id="inputTel" name="telefono" value="<?php echo $telefono ?>" />
                         </div>
                 </div>
                 <div class="form-group">       
                     <label for="inputfecha" class="label-sm-2">Fecha de Nacimiento (*)</label>
                         <div class="input-sm-5">
-                            <input type="date" class="form-control" id="inputfecha" name="fecha_nac" placeholder="DD-MM-AAAA" />
+                            <input type="date" class="form-control" id="inputfecha" name="fecha_nac" value="<?php echo $fechaNac ?>" />
                         </div>
                 </div>
                 <div class="form-group">       
-                        <label for="inputpass" class="label-sm-2">Contraseña Temporal (*)</label>
+                        <label for="inputpass" class="label-sm-2">Contraseña (*)</label>
                             <div class="input-sm-5">
                                 <input type="text" disabled="disabled" style="display:none;" name="password" />
-                                <input type="password" class="form-control" id="inputpass" name="password" placeholder="Asigne una contraseña " />
+                                <input type="password" class="form-control" id="inputpass" name="password" value="<?php echo $contrasena ?>" />
                             </div>
                 </div>
                 <div class="form-group">
@@ -99,8 +133,8 @@
                 </div>
                 <div class="form-group">
                     <div class="boton-sm-offset-2">        
-                    <input type="submit" class="btn btn-default" value="Agregar Alumno" />
-                    <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
+                    <input type="submit" class="btn btn-default" value="Modificar alumno" />
+                    <a class="btn btn-secondary volver" href="modificacionAlumnos.php">Volver</a>
                     </div>
                     <br>
                 </div>
@@ -110,7 +144,7 @@
 
     <?php include("pieDePagina.php"); ?>
 
-    <script src="validacion.js"></script>
+    <script src="validacionModificacion.js"></script>
 
 </body>
 

@@ -40,31 +40,31 @@
     
     <?php include("encabezado.php"); ?>
 
-      <header class="masthead bg-primary text-black text-center">
+      <header class="masthead bg-primary text-white text-center">
 
       <div class="container">
         <h2 class="text-uppercase mb-0">Menú Administrador</h2>
-        <hr class="star-light black">
+        <hr class="star-light">
         <div class="row">
-          <div class="col-md-6 menu">
+          <div class="col-md-6">
             <ul class="list-unstyled">
               <li>
                 <h4>ALUMNOS</h4>
-                <li><a href="altaAlumnos.php"><h5>Alta</h5></a></li>
-                <li><a href="bajaAlumnos.php"><h5>Baja</h5></a></li>
-                <li><a href="modificacionAlumnos.php"><h5>Modificación</h5></a></li>
-                <li><a href="listadoAlumnos.php"><h5>Listado</h5></a></li>
+                <li><a href="altaAlumnos.php"><h5 class="text-white">Alta</h5></a></li>
+                <li><a href="bajaAlumnos.php"><h5 class="text-white">Baja</h5></a></li>
+                <li><a href="modificacionAlumnos.php"><h5 class="text-white">Modificación</h5></a></li>
+                <li><a href="listadoAlumnos.php"><h5 class="text-white">Listado</h5></a></li>
               </li>
             </ul>
           </div>
-          <div class="col-md-6 menu">
+          <div class="col-md-6">
             <ul class="list-unstyled">
               <li>
                 <h4>DOCENTES</h4>
-                <li><a href="altaDocentes.php"><h5>Alta</h5></a></li>
-                <li><a href="bajaDocentes.php"><h5>Baja</h5></a></li>
-                <li><a href="modificacionDocentes.php"><h5>Modificación</h5></a></li>
-                <li><a href="listadoDocentes.php"><h5>Listado</h5></a></li>
+                <li><a href="altaDocentes.php"><h5 class="text-white">Alta</h5></a></li>
+                <li><a href="bajaDocentes.php"><h5 class="text-white">Baja</h5></a></li>
+                <li><a href="modificacionDocentes.php"><h5 class="text-white">Modificación</h5></a></li>
+                <li><a href="listadoDocentes.php"><h5 class="text-white">Listado</h5></a></li>
               </li>
             </ul>
           </div>

@@ -38,7 +38,7 @@
 
     <link href="estilo.css" rel="stylesheet" type="text/css" />
 
-    <script src="validacion.js" type="text/javascript"></script>
+    <script src="validacionAlta.js" type="text/javascript"></script>
 
 </head>
 <body id="page-top">
