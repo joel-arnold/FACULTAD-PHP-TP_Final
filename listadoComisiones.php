@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TITULO DE LA PAGINA</title>
+    <title>Listado de comisiones</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -38,68 +38,24 @@
 
 </head>
 <body id="page-top">
-    
-    <?php
-    include("conexion.php");
-    ?>
 
-        <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-                <div class="container">
-                  <a class="navbar-brand js-scroll-trigger" href="index.php">Sistema Académico</a>
-                  <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                      <li class="nav-item mx-0 mx-lg-1">
-                        <!--<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="iniciarSesion.html">Iniciar Sesión</a>-->
-                        <div class="btn-group">
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="menuDocente.php">
-                                <?php
-                                    if(isset($_SESSION['nombre'])){
-                                    echo $_SESSION['nombre'];
-                                    }
-                                    else{
-                                    echo "No logueado";
-                                    }
-                                ?>
-                                </a>
-                            </li>
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="cerrarSesion.php">
-                                <?php
-                                    if(!isset($_SESSION['tipoUsuario'])){
-                                        echo "Volver al incio";
-                                    }
-                                    else{
-                                        echo "Cerrar sesión";
-                                    }
-                                ?>
-                                </a>
-                            </li>
-                            </ul>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </nav>
+        <?php
+            include("encabezado.php");
+            include("conexion.php");
+        ?>
+
               <header class="masthead bg-primary text-white text-center">
-                    
                 <div class="container">
-
-                   <?php
-                   if(isset($_SESSION['tipoUsuario']) && $_SESSION['tipoUsuario'] == "Docente"){
-                        $fecha=date("d-m-Y");
-                    ?>
-                    <h2>ESTADO ACADEMICO</h2>
+                    <h2>LISTADO DE COMISIONES</h2>
                     <hr class="star-light">
-                    <p class="recordatorio">Listado de Comisiones para el docente<?php 
+                    <p class="recordatorio">Listado de Comisiones para el docente <?php 
                     echo $_SESSION['nombre']; ?> 
-                    al <?php echo $fecha ?>.</p>
+                    al <?php
+                    $fecha = date('d-m-Y');
+                    echo $fecha;
+                    ?>.</p>
                                     
-                    <section class="porfolio" id="alta">
+                    
                         <div class="container">
 
                             <?php
@@ -186,27 +142,28 @@
                         <div class="text-right">               
                             <a class="btn btn-secondary" href="menuDocente.php">Volver</a>
                         </div>
-                        
-                        </div>
-                        
-                </section>
-
-                <?php
-                }
-            else{
-                ?>
-                <div class="container">
-                <h2>El tipo de usuario actual no tiene permiso para acceder a esta sección.</h2>
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 </div>
-                <?php
-                }
-            ?>
-
-        </div>
+            </div>
         </header>
 
 <?php include("pieDePagina.php"); ?>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+
 </body>
 
 </html>
