@@ -68,6 +68,7 @@
     $fechaNac = $fila['fecha_nacimiento'];
     $contrasena = $fila['pass'];
     $tipoUsuario = $fila['tipo_usuario'];
+    $_SESSION['legajoAModificar'] = $fila['legajo'];
     
 
 
@@ -75,9 +76,9 @@
 
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
-        <h2 class="font-weight-light mb-0">MODIFICAR ALUMNO</h2>
+        <h2>MODIFICAR ALUMNO</h2>
             <hr class="star-light">
-            <form class="form-horizontal" role="form" action="modifPerson.php" onsubmit="return validacionModificacion()" method="POST" name="formalta">
+            <form class="form-horizontal" role="form" action="modifAlumno.php" onsubmit="return validacionModificacion()" method="POST" name="formalta">
             <div class="form-group">
                 <label for="legajo" class="label-sm-2">Legajo</label>
                     <div class="input-sm-5">

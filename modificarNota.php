@@ -1,10 +1,10 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <?php
         include("conexion.php");
 
         $inscripcion = $_POST['id_insc'];
         $nota = $_POST['nota'];
-
-
 
         $vSql = "update inscripciones set nota = '$nota' where id_inscripcion='$inscripcion'";
 
@@ -19,9 +19,6 @@
         $result = mysqli_query($link, $query);
         $fila = mysqli_fetch_array($result);
         $id_materia = $fila['id_materia'];
-
-        //header("Location:listarAlum_materias.php?materia=$id_materia"); //poner hipervinculo para volver al inicio
-
 
         mysqli_close($link);
 ?>

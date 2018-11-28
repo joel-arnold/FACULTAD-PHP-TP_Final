@@ -32,7 +32,7 @@
 
   <header class="masthead bg-primary text-white text-center">
     <div class="container">
-        <br /><br /><br /><br /><br /><br />
+        <br /><br />
         <h4 class="text-uppercase mb-0">Usted no tiene autorización para ingresar a esta sección o no inició sesión</h4>
         <br />
         <h5 class="text-uppercase mb-0">Puede volver al inicio o iniciar sesión con una cuenta diferente</h5>
@@ -51,6 +51,23 @@
         <br /><br /><br />
     </div>
   </header>
+
   <?php include("pieDePagina.php"); ?>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
 </body>
 </html>

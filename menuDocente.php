@@ -39,17 +39,18 @@
         
   <?php include("encabezado.php"); ?>
   
-  <header class="masthead bg-primary text-black text-center">
+  <header class="masthead bg-primary text-white text-center">
       <div class="container">
-        <h2 class="text-uppercase mb-0">Menú Docente</h2>
+        <h2>MENU DOCENTE</h2>
         <hr class="star-light black">
-        <div class="menu">
+        <div>
+        <br />
           <a class="mb-3" href="altaNotas.php">
-            <h2 >Carga de notas</h2>
+            <h5 class="text-white">Carga de notas</h5>
           </a>
           <br />
           <a class="mb-3" href="listadoComisiones.php">
-            <h2>Listado de comisiones</h2>
+            <h5 class="text-white">Listado de comisiones</h5>
           </a>
         </div>
       </div>
@@ -57,6 +58,21 @@
     </header>
 
   <?php include("pieDePagina.php"); ?>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
 
 </body>
 </html>

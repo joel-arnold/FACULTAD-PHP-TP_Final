@@ -12,13 +12,6 @@ function validacionModificacion(){
     var mensajeIncorrecto = "";
     var valido = true;
 
-    $(document).ready(function (){  
-	$("input, select").change(function () {   
-        valido = false;
-        mensajeVacio = "No se modificó ningún dato.";  
-	    }); 
-    }); 
-
     if(nom=="" || nom == undefined){
         mensajeVacio += "\nNombre y Apellido";
         valido = false;
@@ -79,7 +72,7 @@ function validacionModificacion(){
         }
 
         if(!(mensajeIncorrecto == "")){
-            window.alert("Existen los siguientes problemas:" + mensajeIncorrecto);
+            window.alert("Existen los siguientes problemas:" + mensajeIncorrecto);    
         }        
     }
 
