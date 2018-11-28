@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  if(!$_SESSION['tipoUsuario'] == "alumno"){
+  if(!$_SESSION['tipoUsuario'] == "Alumno"){
     header("Location: noLogueado.php");
     exit();
   }
@@ -17,7 +17,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Inscripción Alumnos</title>
+    <title>Inscripción a materia</title>
 
     
    <!-- Bootstrap core CSS -->
@@ -49,8 +49,6 @@
         <h2>INSCRIBIRSE A UNA MATERIA</h2>
         <hr class="star-light">
         <p class="recordatorio">Formulario de inscripción a materias.</p>
-        
-        <section class="porfolio" id="alta">
                 <div class="container">
                     <div class="formAltaAlumnos">
                         <form class="form-horizontal" role="form" action="inscripcion.php" method="POST" name="formalta">
@@ -68,8 +66,15 @@
                                             
                                             <?php
                                                 include('conexion.php');
-                                                
-                                                    $vSQL = "select * from materia";
+                                                    $legajito = $_SESSION['legajo'];
+
+                                                    $vSQL = "SELECT DISTINCT materia.nombre_materia, materia.id_materia
+                                                    FROM materia WHERE nombre_materia NOT IN
+                                                    (SELECT DISTINCT materia.nombre_materia
+                                                    FROM ((materia
+                                                    LEFT JOIN inscripciones ON materia.id_materia = inscripciones.id_materia)
+                                                    LEFT JOIN usuario ON usuario.legajo = inscripciones.legajo_alumno)
+                                                    WHERE inscripciones.legajo_alumno='$legajito')";
                                                 
                                                     $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
                                                 
@@ -97,13 +102,28 @@
                             </div>
                             </form>
                 </div>
-        </section>
     </div>
+    <br /><br /><br />
     </header>
 
     <script src="validacion.js"></script>
 
     <?php include("pieDePagina.php"); ?>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
 
 </body>
 

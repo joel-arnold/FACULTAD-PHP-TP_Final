@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  if(!$_SESSION['tipoUsuario'] == "alumno"){
+  if(!($_SESSION['tipoUsuario'] == "Alumno")){
     header("Location: noLogueado.php");
     exit();
   }
@@ -39,8 +39,6 @@
 
     <link href="estilo.css" rel="stylesheet" type="text/css" />
 
-    
-
 </head>
 <body id="page-top">
     
@@ -58,8 +56,6 @@
             <p class="recordatorio">Estado del alumno <?php 
             echo $usuario ?> 
             al <?php echo $fecha ?>.</p>
-                            
-            <section class="porfolio" id="alta">
                         <div class="container">
 
                             <?php
@@ -149,10 +145,26 @@
                             <a class="btn btn-secondary" href="menuAlumno.php">Volver</a>
                         </div>
                         </div>
-                </section>
         </div>
     </header>
+
     <?php include("pieDePagina.php"); ?>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
 </body>
 
 </html>

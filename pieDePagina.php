@@ -1,6 +1,6 @@
     <!-- Footer -->
     <footer class="footer text-center">
-      <h2> MAPA DEL SITIO </h2>
+      <h4> MAPA DEL SITIO </h4>
       <br />
       <div class="container">
       <div class="row">

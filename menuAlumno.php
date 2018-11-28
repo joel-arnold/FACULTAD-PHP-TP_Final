@@ -40,21 +40,40 @@
   <?php include("encabezado.php"); ?>
 
   <header class="masthead bg-primary text-white text-center">
-    <div class="container">
-    <div class="menu">
+      <div class="container">
+        <h2>MENU ALUMNOS</h2>
+        <hr class="star-light black">
+        <div>
         <br />
-        <br />
-        <h2>Menú Alumnos</h2>
-        <br />
-        <br />
-        <a href="inscripcionMaterias.php">Inscripción a materias</a>
-        <br />
-        <br />
-        <a href="estadoAcademico.php">Estado académico</a>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </div>
-    </div>
-  </header>
-  <?php include("pieDePagina.php"); ?>
+          <a class="mb-3" href="inscripcionMaterias.php">
+            <h5 class="text-white">Inscripción a materias</h5>
+          </a>
+          <br />
+          <a class="mb-3" href="estadoAcademico.php">
+            <h5 class="text-white">Estado académico</h5>
+          </a>
+        </div>
+      </div>
+      <br /><br /><br /><br />
+    </header>
+
+    <?php include("pieDePagina.php"); ?>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
 </body>
+
 </html>
