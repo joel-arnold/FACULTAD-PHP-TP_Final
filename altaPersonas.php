@@ -27,7 +27,7 @@
             <script type="text/javascript">
                 var id = '<?php echo $ultimo_id; ?>';
                 window.alert("Usuario agregado correctamente con el legajo Nº " + id);
-                window.location.href = "altaAlumnos.php";
+                window.location.href = "menuAdministrador.php";
             </script>
         <?php
     }
@@ -37,7 +37,7 @@
             <script type="text/javascript">
                 var legajo = '<?php echo $persona['legajo']; ?>';
                 window.alert("La persona ya está ingresada con el legajo Nº " + legajo + ". Si quiere modificar sus datos, dirijase al menú de modificación.");
-                window.location.href = "altaAlumnos.php";
+                window.location.href = "menuAdministrador.php";
             </script>
         <?php
     }

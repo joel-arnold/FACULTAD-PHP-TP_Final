@@ -29,8 +29,8 @@
         mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
         echo '<script type="text/javascript">
-                window.alert("Alumno modificado con éxito");
-                window.location.href = "modificacionAlumnos.php";
+                window.alert("Usuario modificado con éxito");
+                window.location.href = "menuAdministrador.php";
                 </script>';
 
         mysqli_close($link);

@@ -14,7 +14,7 @@
 
 			echo'<script type="text/javascript">
 				window.alert("Legajo inexistente. Ingrese otro.");
-				window.location.href = "bajaAlumnos.php";
+				window.location.href = "menuAdministrador.php";
 				</script>';				
 		}	
 		else{
@@ -23,7 +23,7 @@
 
 			echo'<script type="text/javascript">
 				window.alert("Usuario eliminado correctamente");
-				window.location.href = "bajaAlumnos.php";
+				window.location.href = "menuAdministrador.php";
 				</script>';
 		}
 

@@ -80,11 +80,15 @@
                                                 
                                                     $cantResultados = mysqli_num_rows($vResultado);
 
-                                                    for($i=1;$i<=$cantResultados;$i++){
-                                                        $fila = mysqli_fetch_array($vResultado);
-                                                        ?> <option value= "<?php echo $fila['id_materia']?>"> <?php echo $fila['nombre_materia']; ?> </option> <?php
+                                                    if($cantResultados == 0){
+                                                        ?> <option disabled="disabled" selected> <?php echo "No hay nada para inscribirse" ?> </option> <?php
                                                     }
-                                                
+                                                    else{
+                                                        for($i=1;$i<=$cantResultados;$i++){
+                                                            $fila = mysqli_fetch_array($vResultado);
+                                                            ?> <option value= "<?php echo $fila['id_materia']?>"> <?php echo $fila['nombre_materia']; ?> </option> <?php
+                                                        }
+                                                    }
                                             ?>
                                             
                                     </select>
@@ -93,7 +97,7 @@
                                 <div class="form-group">
                                     <div class="boton-sm-offset-2">
                                         
-                                    <input type="submit"  class="btn btn-default" value="Inscribirse">
+                                    <input type="submit"  class="btn btn-default" value="Inscribirse" <?php if($cantResultados == 0) echo "disabled"; ?>>
                                     <a class="btn btn-secondary volver" href="menuAlumno.php">Volver</a>
                                     
                                     </div>

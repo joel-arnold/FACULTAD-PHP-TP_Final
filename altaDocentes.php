@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Alta de Alumnos</title>
+    <title>Alta de Docentes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
 
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
-        <h2>ALTA DE ALUMNOS</h2>
+        <h2>ALTA DE DOCENTES</h2>
             <hr class="star-light">
             <form class="form-horizontal" role="form" action="altaPersonas.php" onsubmit="return validacion()" method="POST" name="formalta">
                 <div class="form-group">
@@ -91,13 +91,13 @@
                     <label for="tipoUSuario" class="label-sm-2">Tipo de usuario (*)</label>
                     <div class="input-sm-5">
                     <select class="form-control" name="tipoUsuario" id="tipoUSuario">
-                            <option>Alumno</option>
+                            <option>Docente</option>
                     </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="boton-sm-offset-2">        
-                    <input type="submit" class="btn btn-default" value="Agregar Alumno" />
+                    <input type="submit" class="btn btn-default" value="Agregar Docente" />
                     <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                     </div>
                     <br>

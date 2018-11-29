@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Listado de Alumnos</title>
+    <title>Baja de Alumnos</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,13 @@
 </head>
 <body id="page-top">
 
-    <?php include("encabezado.php"); ?>
+    <?php
+        include("encabezado.php");
+        include("conexion.php");
+        $vSQL = "select * from usuario where tipo_usuario = 'Alumno'";
+        $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
+        $cant_filas = mysqli_num_rows($vResultado);    
+    ?>
 
     <header class="masthead bg-primary text-white text-center">
         <h2>BAJA DE ALUMNOS</h2>
@@ -58,7 +64,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="boton-sm-offset-2">
-                                <button type="submit" class="btn btn-default">Borrar</button>
+                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Borrar</button>
                                 <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                                 </div>
                             </div>
@@ -71,12 +77,8 @@
                                 <div class="input-sm-5">
                                     <select class="form-control" name="nombreElegido" id="inputLegajoBaja">
                                             <?php
-                                                include("conexion.php");
-                                                $vSQL = "select * from usuario where tipo_usuario = 'Alumno'";
-                                                $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
-                                                $cant_filas = mysqli_num_rows($vResultado);
                                                 if($cant_filas == 0){
-                                                    ?> <option>No hay alumnos cargados</option> <?php
+                                                    ?> <option selected>No hay alumnos cargados</option> <?php
                                                     }
                                                     else{
                                                         while ($fila = mysqli_fetch_array($vResultado)){
@@ -93,7 +95,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="boton-sm-offset-2">
-                                <button type="submit" class="btn btn-default">Borrar</button>
+                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Borrar</button>
                                 <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                                 </div>
                             </div>

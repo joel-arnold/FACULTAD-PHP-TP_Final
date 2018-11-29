@@ -17,7 +17,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Modificar alumno</title>
+    <title>Modificar docente</title>
 
     
    <!-- Bootstrap core CSS -->
@@ -69,14 +69,12 @@
     $contrasena = $fila['pass'];
     $tipoUsuario = $fila['tipo_usuario'];
     $_SESSION['legajoAModificar'] = $fila['legajo'];
-    
-
 
     ?>
 
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
-        <h2>MODIFICAR ALUMNO</h2>
+        <h2>MODIFICAR DOCENTE</h2>
             <hr class="star-light">
             <form class="form-horizontal" role="form" action="modificarUsuario.php" onsubmit="return validacionModificacion()" method="POST" name="formalta">
             <div class="form-group">
@@ -128,14 +126,14 @@
                     <label for="tipoUSuario" class="label-sm-2">Tipo de usuario (*)</label>
                     <div class="input-sm-5">
                     <select class="form-control" name="tipoUsuario" id="tipoUSuario">
-                            <option>Alumno</option>
+                            <option>Docente</option>
                     </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="boton-sm-offset-2">        
-                    <input type="submit" class="btn btn-default" value="Modificar alumno" />
-                    <a class="btn btn-secondary volver" href="modificacionAlumnos.php">Volver</a>
+                    <input type="submit" class="btn btn-default" value="Modificar docente" />
+                    <a class="btn btn-secondary volver" href="modificacionDocentes.php">Volver</a>
                     </div>
                     <br>
                 </div>

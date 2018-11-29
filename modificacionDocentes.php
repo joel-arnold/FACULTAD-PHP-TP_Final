@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modificación de alumnnos</title>
+    <title>Modificación de docentes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,18 +43,18 @@
     <?php
         include("encabezado.php");
         include("conexion.php");
-        $vSQL = "select * from usuario where tipo_usuario = 'Alumno'";
+        $vSQL = "select * from usuario where tipo_usuario = 'Docente'";
         $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
         $cant_filas = mysqli_num_rows($vResultado);
     ?>
 
     <header class="masthead bg-primary text-white text-center">
-        <h2>MODIFICACION DE ALUMNOS</h2>
+        <h2>MODIFICACION DE DOCENTES</h2>
             <hr class="star-light">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 formModifAlumnos">
-                        <form class="form-horizontal" role="form" action="modificarAlumno.php" method="POST" name="formModif">
+                        <form class="form-horizontal" role="form" action="modificarDocente.php" method="POST" name="formModif">
                             <div class="form-group">
                                 <label for="inputLegajoBaja" class="label-sm-2">Buscar por legajo:</label>
                                 <div class="input-sm-5">
@@ -63,21 +63,21 @@
                             </div>
                             <div class="form-group">
                                 <div class="boton-sm-offset-2">
-                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Modificar alumno</button>
+                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Modificar docente</button>
                                 <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="col-md-6 formModifAlumnos">
-                        <form class="form-horizontal" role="form" action="modificarAlumno.php" method="POST" name="formModif">
+                        <form class="form-horizontal" role="form" action="modificarDocente.php" method="POST" name="formModif">
                             <div class="form-group">
                                 <label for="inputLegajoBaja" class="label-sm-2">Buscar por nombre:</label>
                                 <div class="input-sm-5">
                                     <select class="form-control" name="nombreElegido" id="inputLegajoBaja">
                                             <?php
                                                 if($cant_filas == 0){
-                                                    ?> <option selected>No hay alumnos cargados</option> <?php
+                                                    ?> <option>No hay docentes cargados</option> <?php
                                                 }
                                                 else{
                                                     while ($fila = mysqli_fetch_array($vResultado)){
@@ -94,7 +94,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="boton-sm-offset-2">
-                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Modificar alumno</button>
+                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Modificar docente</button>
                                 <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                                 </div>
                             </div>
