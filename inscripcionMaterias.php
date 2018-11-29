@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  if(!$_SESSION['tipoUsuario'] == "Alumno"){
+  if(!($_SESSION['tipoUsuario'] == "Alumno")){
     header("Location: noLogueado.php");
     exit();
   }
@@ -17,7 +17,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Inscripción a materia</title>
+    <title>Inscripción a materias</title>
 
     
    <!-- Bootstrap core CSS -->

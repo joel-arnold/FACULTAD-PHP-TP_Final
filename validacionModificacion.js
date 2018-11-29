@@ -11,6 +11,14 @@ function validacionModificacion(){
     var mensajeVacio = "";
     var mensajeIncorrecto = "";
     var valido = true;
+    var huboCambios = false;
+
+    $(document).ready(function() 
+    {  
+        $("input[name=nomyape]").change(function () {	 
+            huboCambios = true;
+			});
+    }); 
 
     if(nom=="" || nom == undefined){
         mensajeVacio += "\nNombre y Apellido";
@@ -72,8 +80,13 @@ function validacionModificacion(){
         }
 
         if(!(mensajeIncorrecto == "")){
-            window.alert("Existen los siguientes problemas:" + mensajeIncorrecto);    
-        }        
+            if(huboCambios){
+                window.alert("Existen los siguientes problemas:" + mensajeIncorrecto);
+            }
+            else{
+                window.alert("No se modificó nada en el formulario");
+            }            
+        }      
     }
 
     return valido;

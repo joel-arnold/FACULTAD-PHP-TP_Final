@@ -5,6 +5,9 @@
     header("Location: noLogueado.php");
     exit();
   }
+  else{
+      $_SESSION['trabajandoSobre'] = "alumno";
+  }
 ?>
 
 <!DOCTYPE html>

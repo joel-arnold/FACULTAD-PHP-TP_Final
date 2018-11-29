@@ -1,7 +1,15 @@
+<?php
+  session_start();
+
+  if(!($_SESSION['tipoUsuario'] == "Administrador")){
+    header("Location: noLogueado.php");
+    exit();
+  }
+?>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
-    
     include("conexion.php");
 
     $nom_apel = $_POST['nomyape'];
@@ -11,6 +19,7 @@
     $telefono = $_POST['telefono'];
     $tipo_usu = $_POST['tipoUsuario'];
     $contra = $_POST['password'];
+    $redirigirA = $_SESSION['trabajandoSobre'];
 
     $vSQL = "SELECT * FROM usuario WHERE nombre_apellido = '$nom_apel'";
     $vResultado = mysqli_query($link,$vSQL) or die(mysqli_error($link));
