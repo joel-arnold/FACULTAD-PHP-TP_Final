@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  if(!($_SESSION['tipoUsuario'] == "Administrador")){
+  if((!isset($_SESSION['tipoUsuario'])) || !($_SESSION['tipoUsuario'] == "Administrador")){
     header("Location: noLogueado.php");
     exit();
   }

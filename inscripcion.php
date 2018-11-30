@@ -1,13 +1,15 @@
+<?php
+  session_start();
+
+  if((!isset($_SESSION['tipoUsuario'])) || !($_SESSION['tipoUsuario'] == "Alumno")){
+    header("Location: noLogueado.php");
+    exit();
+  }
+?>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <?php
-    session_start();
-
-    if(!$_SESSION['tipoUsuario'] == "Alumno"){
-        header("Location: noLogueado.php");
-        exit();
-    }
-
     include("conexion.php");
 
     $legajo = $_SESSION['legajo'];
