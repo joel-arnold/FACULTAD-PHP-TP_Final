@@ -5,6 +5,9 @@
     header("Location: noLogueado.php");
     exit();
   }
+  else{
+    $_SESSION['trabajandoSobre'] = "alumno";
+  }
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +41,6 @@
 
     <link href="estilo.css" rel="stylesheet" type="text/css" />
 
-    
-
 </head>
 <body id="page-top">
 
@@ -69,8 +70,6 @@
     $contrasena = $fila['pass'];
     $tipoUsuario = $fila['tipo_usuario'];
     $_SESSION['legajoAModificar'] = $fila['legajo'];
-    
-
 
     ?>
 
@@ -159,6 +158,14 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
+
+     <!-- AGREGADOS EXTRAS -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <!-- AGREGADOS EXTRAS -->
 
     <script src="validacionModificacion.js"></script>
 

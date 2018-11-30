@@ -1,3 +1,26 @@
+var huboCambios = false;
+
+$(document).ready(function(){ 
+    $('#inputnomyape').change(function(){
+        huboCambios = true;
+        });
+    $('#inputemail').change(function(){
+        huboCambios = true;
+        });
+    $('#inputdirec').change(function(){
+        huboCambios = true;
+        });
+    $('#inputTel').change(function(){
+        huboCambios = true;
+        });
+    $('#inputfecha').change(function(){
+        huboCambios = true;
+        });
+    $('#inputpass').change(function(){
+        huboCambios = true;
+        });
+});
+
 function validacionModificacion(){
     nom = document.formalta.inputnomyape.value;
     mail = document.formalta.inputemail.value;
@@ -6,19 +29,19 @@ function validacionModificacion(){
     fec = document.formalta.inputfecha.value;
     pass = document.formalta.inputpass.value;
 
+    //PARA CONTROL DEL CORREO ELECTRONICO
     var regex = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
     var correoValido = regex.test(mail);
+    
+    //PARA EL CONTROL DE LA FECHA DE NACIMIENTO
+    fecha = new Date(fec);
+	hoy = new Date();
+	ed = parseInt((hoy - fecha)/365/24/60/60/1000);
+
+    //VARIOS
     var mensajeVacio = "";
     var mensajeIncorrecto = "";
     var valido = true;
-    var huboCambios = false;
-
-    $(document).ready(function() 
-    {  
-        $("input[name=nomyape]").change(function () {	 
-            huboCambios = true;
-			});
-    }); 
 
     if(nom=="" || nom == undefined){
         mensajeVacio += "\nNombre y Apellido";
@@ -79,14 +102,20 @@ function validacionModificacion(){
             valido = false;
         }
 
+        if(ed < 18){
+            mensajeIncorrecto += "\nEl usuario debe tener al menos 18 años.";
+            valido = false;
+        }
+
         if(!(mensajeIncorrecto == "")){
-            if(huboCambios){
-                window.alert("Existen los siguientes problemas:" + mensajeIncorrecto);
+            window.alert("Existen los siguientes problemas:" + mensajeIncorrecto);       
+        }
+        else{
+            if(!huboCambios){
+                window.alert("No se modificó ningún dato.");
+                valido = false;
             }
-            else{
-                window.alert("No se modificó nada en el formulario");
-            }            
-        }      
+        }
     }
 
     return valido;

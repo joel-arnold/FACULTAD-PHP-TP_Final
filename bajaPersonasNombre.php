@@ -1,5 +1,7 @@
 
 	<?php
+		session_start();
+
         include("conexion.php");
 
 		$leg = $_POST['nombreElegido'];
@@ -11,20 +13,37 @@
 		$fila = mysqli_fetch_array($vResultado);
 
 		if(mysqli_num_rows($vResultado)==0){
-
-			echo'<script type="text/javascript">
+			?>
+				<script type="text/javascript">
 				window.alert("Usuario ya eliminado, elija otro o vuelva hacia atrás");
-				window.location.href = "menuAdministrador.php";
-				</script>';				
+				window.location.href =
+				<?php
+                    if($_SESSION['trabajandoSobre'] == "alumno"){
+                        echo '"bajaAlumnos.php"';
+                    }
+                    if($_SESSION['trabajandoSobre'] == "docente"){
+                        echo '"bajaDocentes.php"';
+                    }
+                ?>;
+				</script>
+			<?php
 		}	
 		else{
 			$vSQL = "delete from usuario where nombre_apellido = '$leg'";
 			mysqli_query($link, $vSQL);
-
-			echo'<script type="text/javascript">
-				window.alert("Usuario eliminado correctamente");
-				window.location.href = "menuAdministrador.php";
-				</script>';
+			?>
+				<script type="text/javascript">
+				window.alert("Usuario eliminado correctamente.");
+				window.location.href =<?php
+                    if($_SESSION['trabajandoSobre'] == "alumno"){
+                        echo '"bajaAlumnos.php"';
+                    }
+                    if($_SESSION['trabajandoSobre'] == "docente"){
+                        echo '"bajaDocentes.php"';
+                    }
+                ?>;
+				</script>
+			<?php
 		}
 
 		mysqli_free_result($vResultado);

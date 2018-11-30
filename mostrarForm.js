@@ -1,4 +1,0 @@
-
-$('.formModifAlumnos').addClass("d-none");    
-
-

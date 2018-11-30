@@ -28,10 +28,18 @@
 
         mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
-        echo '<script type="text/javascript">
-                window.alert("Usuario modificado con éxito");
-                window.location.href = "menuAdministrador.php";
-                </script>';
+        ?>
+          <script type="text/javascript">
+          window.alert("Usuario modificado con éxito.");
+          window.location.href = 
+          <?php
+            if($_SESSION['trabajandoSobre'] == "alumno"){
+                echo '"modificarAlumno.php"';
+            }
+            if($_SESSION['trabajandoSobre'] == "docente"){
+                echo '"modificarDocente.php"';
+            }
+        ?>;
 
         mysqli_close($link);
 

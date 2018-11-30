@@ -6,8 +6,16 @@ function validacion(){
     fec = document.formalta.inputfecha.value;
     pass = document.formalta.inputpass.value;
 
+    //PARA CONTROL DEL CORREO ELECTRONICO
     var regex = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
     var correoValido = regex.test(mail);
+    
+    //PARA EL CONTROL DE LA FECHA DE NACIMIENTO
+    fecha = new Date(fec);
+	hoy = new Date();
+	ed = parseInt((hoy - fecha)/365/24/60/60/1000);
+
+    //VARIOS
     var mensajeVacio = "";
     var mensajeIncorrecto = "";
     var valido = true;
@@ -68,6 +76,11 @@ function validacion(){
 
         if(!correoValido){
             mensajeIncorrecto += "\nEl correo electrónico ingresado no es correcto.";
+            valido = false;
+        }
+
+        if(ed < 18){
+            mensajeIncorrecto += "\nEl usuario debe tener al menos 18 años.";
             valido = false;
         }
 

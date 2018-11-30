@@ -36,7 +36,15 @@
             <script type="text/javascript">
                 var id = '<?php echo $ultimo_id; ?>';
                 window.alert("Usuario agregado correctamente con el legajo Nº " + id);
-                window.location.href = "menuAdministrador.php";
+                window.location.href = 
+                <?php
+                    if($_SESSION['trabajandoSobre'] == "alumno"){
+                        echo '"altaAlumnos.php"';
+                    }
+                    if($_SESSION['trabajandoSobre'] == "docente"){
+                        echo '"altaDocentes.php"';
+                    }
+                ?>;
             </script>
         <?php
     }
@@ -46,7 +54,15 @@
             <script type="text/javascript">
                 var legajo = '<?php echo $persona['legajo']; ?>';
                 window.alert("La persona ya está ingresada con el legajo Nº " + legajo + ". Si quiere modificar sus datos, dirijase al menú de modificación.");
-                window.location.href = "menuAdministrador.php";
+                window.location.href =
+                <?php
+                    if($_SESSION['trabajandoSobre'] == "alumno"){
+                        echo '"altaAlumnos.php"';
+                    }
+                    else{
+                        echo '"altaDocentes.php"';
+                    }
+                ?>;
             </script>
         <?php
     }

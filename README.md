@@ -1,6 +1,6 @@
-# TP-AD-EG
+# SISTEMA ACADEMICO
 Trabajo Práctico de Aprobación Directa para Entornos Gráficos
 
 ## Integrantes
-* Arnold, Joel
-* Cardoso, Mailen Aldana
+* ARNOLD, Joel (Legajo 34.392) - ar.joelarnold@yahoo.com.ar
+* CARDOSO, Mailén Aldana (Legajo 40.237) – mailen.cardoso@yahoo.com.ar
