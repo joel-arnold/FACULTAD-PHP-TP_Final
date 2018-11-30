@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  if(!($_SESSION['tipoUsuario'] == "Administrador")){
+  if((!isset($_SESSION['tipoUsuario'])) || !($_SESSION['tipoUsuario'] == "Administrador")){
     header("Location: noLogueado.php");
     exit();
   }
@@ -29,20 +29,19 @@
         mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
         ?>
-          <script type="text/javascript">
-          window.alert("Usuario modificado con éxito.");
-          window.location.href = 
-          <?php
-            if($_SESSION['trabajandoSobre'] == "alumno"){
-                echo '"modificarAlumno.php"';
-            }
-            if($_SESSION['trabajandoSobre'] == "docente"){
-                echo '"modificarDocente.php"';
-            }
-        ?>;
-
-        mysqli_close($link);
-
-?>
+            <script type="text/javascript">
+            window.alert("Usuario modificado con éxito.");
+            window.location.replace(<?php
+                if($_SESSION['trabajandoSobre'] == "alumno"){
+                    echo '"modificacionAlumnos.php"';
+                }
+                if($_SESSION['trabajandoSobre'] == "docente"){
+                    echo '"modificacionDocentes.php"';
+                }
+            ?>);
+            </script>
+        <?php
+            mysqli_close($link);
+        ?>
 </body>
 </html>

@@ -28,14 +28,21 @@
     
     if($fila['tipo_usuario'] == "Administrador"){
          
-           header("Location: menuAdministrador.php");
+        echo'<script type="text/javascript">
+        window.location.href = "menuAdministrador.php";
+        </script>';
+
     }
     else if($fila['tipo_usuario'] == "Alumno"){
-           header("Location: menuAlumno.php");           
+        echo'<script type="text/javascript">
+        window.location.href = "menuAlumno.php";
+        </script>';           
     }
 
     else if($fila['tipo_usuario'] == "Docente"){
-           header("Location: menuDocente.php");
+        echo'<script type="text/javascript">
+        window.location.href = "menuDocente.php";
+        </script>';
     }
       
 
