@@ -39,7 +39,7 @@
 
     <link href="estilo.css" rel="stylesheet" type="text/css" />
 
-    
+    <script src="validaBaja.js" type="text/javascript"></script>    
 
 </head>
 <body id="page-top">
@@ -74,7 +74,7 @@
                         </form>
                     </div>
                     <div class="col-md-6 formModifAlumnos">
-                        <form class="form-horizontal" role="form" action="bajaPersonasNombre.php" method="POST" name="formBaja">
+                        <form class="form-horizontal" role="form" action="bajaPersonasNombre.php" method="POST" onsubmit="return aceptaBaja()" name="formBaja">
                             <div class="form-group">
                                 <label for="inputLegajoBaja" class="label-sm-2">Eliminación por nombre:</label>
                                 <div class="input-sm-5">
