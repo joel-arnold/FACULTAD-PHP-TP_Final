@@ -1,11 +1,9 @@
-function aceptaBaja() {
-    nombrecito = document.formBaja.nombreElegido.value;
-    legajito = document.formBaja.legajo.value;
+function aceptaBaja(){
 
-    if(confirm("¿Segurito?")) {
+    if(confirm("¿Seguro que desea elimnar el usuario?\n")){
     return true;
     }
-    else {
+    else{
     return false;
     }
 }

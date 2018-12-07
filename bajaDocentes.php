@@ -58,7 +58,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 formModifAlumnos">
-                        <form class="form-horizontal" role="form" action="bajaPersonasLegajo.php" method="POST" name="formBaja">
+                        <form class="form-horizontal" role="form" action="bajaPersonasLegajo.php" onsubmit="return aceptaBaja()" method="POST" name="formBaja">
                             <div class="form-group">
                                 <label for="inputLegajoBaja" class="label-sm-2">Eliminación por legajo:</label>
                                 <div class="input-sm-5">
@@ -109,8 +109,6 @@
     </header>
 
     <?php include("pieDePagina.php"); ?>
-
-    <script src="validacion.js"></script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
