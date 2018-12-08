@@ -1,9 +1,10 @@
-function aceptaBaja(){
-
-    if(confirm("¿Seguro que desea elimnar el usuario?\n")){
-    return true;
+function controlVacio(){
+    legajo = document.formBajaLegajo.legajo.value;
+    if(legajo == "" || legajo == undefined){
+        window.alert("Tenés que ingresar un legajo.")
+        return false;
     }
     else{
-    return false;
+        return true;
     }
 }
