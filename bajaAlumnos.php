@@ -37,9 +37,7 @@
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
-    <link href="estilo.css" rel="stylesheet" type="text/css" />
-
-    
+    <link href="estilo.css" rel="stylesheet" type="text/css" />    
 
 </head>
 <body id="page-top">
@@ -109,8 +107,6 @@
     </header>
 
     <?php include("pieDePagina.php"); ?>
-
-    <script src="validacion.js"></script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
