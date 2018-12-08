@@ -46,7 +46,7 @@
         <h2 class="text-uppercase mb-0">Menú Administrador</h2>
         <hr class="star-light">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <ul class="list-unstyled">
               <li>
                 <h4>ALUMNOS</h4>
@@ -57,7 +57,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <ul class="list-unstyled">
               <li>
                 <h4>DOCENTES</h4>
@@ -65,6 +65,15 @@
                 <li><a href="bajaDocentes.php"><h5 class="text-white">Baja</h5></a></li>
                 <li><a href="modificacionDocentes.php"><h5 class="text-white">Modificación</h5></a></li>
                 <li><a href="listadoDocentes.php"><h5 class="text-white">Listado</h5></a></li>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-unstyled">
+              <li>
+                <h4>ASIGNACION DE DOCENTES A:</h4>
+                <li><a href="asignarMaterias.php"><h5 class="text-white">Materias</h5></a></li>
+                <li><a href="asignarComisiones.php"><h5 class="text-white">Comisiones</h5></a></li>
               </li>
             </ul>
           </div>

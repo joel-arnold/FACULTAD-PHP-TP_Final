@@ -20,7 +20,7 @@
         mysqli_query($link, $vSql) or die(mysqli_error($link));
         ?>
                 <script type="text/javascript">
-                alert("Nota Modificada con éxito");
+                alert("Nota modificada con éxito");
                 window.location.replace("listarAlum_materias.php?materia=<?php echo $_SESSION['materiaElegida']; ?>");
                 </script>
         <?php

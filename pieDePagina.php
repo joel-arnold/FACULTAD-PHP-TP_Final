@@ -4,13 +4,13 @@
       <br />
       <div class="container">
       <div class="row">
-      <div class="col-md-6 mb-5 mb-lg-0">
+      <div class="col-md-8 mb-5 mb-lg-0">
         <h6 class="text-uppercase mb-3"><a href="menuAdministrador.php">MENU ADMINISTRADOR</a></h6>
       </div>
-      <div class="col-md-3 mb-5 mb-lg-0">
+      <div class="col-md-2 mb-5 mb-lg-0">
         <h6 class="text-uppercase mb-3"><a href="menuDocente.php">MENU DOCENTE</a></h6>
       </div>
-      <div class="col-md-3 mb-5 mb-lg-0">
+      <div class="col-md-2 mb-5 mb-lg-0">
         <h6 class="text-uppercase mb-3"><a href="menuAlumno.php">MENU ALUMNOS</a></h6>
       </div>
       </div>
@@ -27,7 +27,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-3 mb-5 mb-lg-0">          
+          <div class="col-md-2 mb-5 mb-lg-0">          
             <ul class="list-unstyled">
               <li>
                 <li><a href="altaDocentes.php">Alta docentes</a></li>
@@ -37,13 +37,21 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-3 mb-5 mb-lg-0">
+          <div class="col-md-3 mb-5 mb-lg-0">          
+            <ul class="list-unstyled">
+              <li>
+                <li><a href="asignarMaterias.php">Asignar materias a docentes</a></li>
+                <li><a href="asignarComisiones.php">Asignar comisiones a docentes</a></li>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2 mb-5 mb-lg-0">
             <ul class="list-unstyled">
               <li><a href="altaNotas.php">Calificar alumnos</a></li>
               <li><a href="listadoComisiones.php">Listado de comisiones</a></li>
             </ul>
           </div>
-          <div class="col-md-3 mb-5 mb-lg-0">
+          <div class="col-md-2 mb-5 mb-lg-0">
             <ul class="list-unstyled">
               <li><a href="inscripcionMaterias.php">Inscripción a materias</a></li>
               <li><a href="estadoAcademico.php">Estado académico</a></li>
