@@ -49,7 +49,7 @@
           <div class="col-md-4">
             <ul class="list-unstyled">
               <li>
-                <h4>ALUMNOS</h4>
+              <h5 class="text-uppercase mb-0">Alumnos</h5> <br />
                 <li><a href="altaAlumnos.php"><h5 class="text-white">Alta</h5></a></li>
                 <li><a href="bajaAlumnos.php"><h5 class="text-white">Baja</h5></a></li>
                 <li><a href="modificacionAlumnos.php"><h5 class="text-white">Modificación</h5></a></li>
@@ -60,7 +60,7 @@
           <div class="col-md-4">
             <ul class="list-unstyled">
               <li>
-                <h4>DOCENTES</h4>
+                <h5 class="text-uppercase mb-0">Docentes</h5> <br />
                 <li><a href="altaDocentes.php"><h5 class="text-white">Alta</h5></a></li>
                 <li><a href="bajaDocentes.php"><h5 class="text-white">Baja</h5></a></li>
                 <li><a href="modificacionDocentes.php"><h5 class="text-white">Modificación</h5></a></li>
@@ -71,7 +71,7 @@
           <div class="col-md-4">
             <ul class="list-unstyled">
               <li>
-                <h4>ASIGNACION DE DOCENTES A:</h4>
+              <h5 class="text-uppercase mb-0">Asignación de docentes a:</h5> <br />
                 <li><a href="asignarMaterias.php"><h5 class="text-white">Materias</h5></a></li>
                 <li><a href="asignarComisiones.php"><h5 class="text-white">Comisiones</h5></a></li>
               </li>

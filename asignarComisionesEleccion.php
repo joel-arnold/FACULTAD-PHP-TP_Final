@@ -44,34 +44,43 @@
 </head>
 <body id="page-top">
     <?php include("encabezado.php"); ?>
+    <?php
+        include("conexion.php");
+        $docenteElegido = $_POST['docente'];
+        echo $docenteElegido;
+        $_SESSION['docenteElegido'] = $docenteElegido;
+        $consultita = "SELECT * FROM usuario WHERE legajo = $docenteElegido";
+        $resultadito = mysqli_query($link,$consultita) or die(mysqli_error($link));
+        $fila = mysqli_fetch_array($resultadito);
+?>
     <header class="masthead bg-primary text-white text-center">
     <div class="container">
         <h2>ASIGNACION DE DOCENTES A COMISIONES</h2>
         <hr class="star-light">
             <div class="container">
                 <div class="formAltaAlumnos">
-                    <form class="form-horizontal" role="form" action="asignarComisionesEleccion.php" method="POST" name="formalta">
+                    <form class="form-horizontal" role="form" action="asignacionComision.php" method="POST" name="formalta">
                         <div class="form-group">
-                            <label for="docente" class="label-sm-2">Elija el docente</label>
+                            <label for="comision" class="label-sm-2">Elija la comision que va a asignar al docente <?php echo $fila['nombre_apellido']; ?></label>
                             <div class="input-sm-5">
-                            <select class="form-control" name="docente" id="docente">        
+                            <select class="form-control" name="comision" id="comision">        
                                     <?php
                                         include('conexion.php');
-                                            $vSQL = "SELECT * FROM usuario WHERE tipo_usuario = 'Docente'";
+                                        $vSQL = "SELECT * FROM comision WHERE NOT legajo_docente = $docenteElegido";
                                         
-                                            $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
-                                        
-                                            $cantResultados = mysqli_num_rows($vResultado);
+                                        $vResultado = mysqli_query($link, $vSQL) or die(mysqli_error($link));
+                                    
+                                        $cantResultados = mysqli_num_rows($vResultado);
 
-                                            if($cantResultados == 0){
-                                                ?> <option disabled="disabled" selected> <?php echo "No hay docentes" ?> </option> <?php
+                                        if($cantResultados == 0){
+                                            ?> <option disabled="disabled" selected> <?php echo "Ya tiene asignada todas" ?> </option> <?php
+                                        }
+                                        else{
+                                            for($i=1;$i<=$cantResultados;$i++){
+                                                $fila = mysqli_fetch_array($vResultado);
+                                                ?> <option value= "<?php echo $fila['id_comision']?>"> <?php echo $fila['desc_comision']; ?> </option> <?php
                                             }
-                                            else{
-                                                for($i=1;$i<=$cantResultados;$i++){
-                                                    $fila = mysqli_fetch_array($vResultado);
-                                                    ?> <option value= "<?php echo $fila['legajo']?>"> <?php echo $fila['nombre_apellido']; ?> </option> <?php
-                                                }
-                                            }
+                                        }
                                     ?>
                             </select>
                             </div>
@@ -79,8 +88,8 @@
                         <div class="form-group">
                             <div class="boton-sm-offset-2">
                                 
-                            <input type="submit"  class="btn btn-default" value="Continuar" <?php if($cantResultados == 0) echo "disabled"; ?>>
-                            <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
+                            <input type="submit"  class="btn btn-default" value="Asignar" <?php if($cantResultados == 0) echo "disabled"; ?>>
+                            <a class="btn btn-secondary volver" href="asignarComisiones.php">Volver</a>
                             
                             </div>
                             <br>

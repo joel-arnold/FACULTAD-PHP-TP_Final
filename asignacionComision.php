@@ -13,9 +13,9 @@
     include("conexion.php");
 
     $legajo = $_SESSION['docenteElegido'];
-    $materia = $_POST['materia'];
+    $comision = $_POST['comision'];
 
-    $vSQL = "UPDATE materia SET legajo_docente = $legajo WHERE id_materia = $materia";
+    $vSQL = "UPDATE comision SET legajo_docente = $legajo WHERE id_comision = $comision";
 
 mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
@@ -23,7 +23,7 @@ mysqli_query($link, $vSQL) or die(mysqli_error($link));
 
     echo'<script type="text/javascript">
             alert("Asignación correcta");
-            window.location.href = "asignarMaterias.php";
+            window.location.href = "asignarComisiones.php";
             </script>';
         mysqli_close($link);
 ?>

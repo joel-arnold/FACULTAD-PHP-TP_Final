@@ -40,8 +40,8 @@
           <div class="col-md-3 mb-5 mb-lg-0">          
             <ul class="list-unstyled">
               <li>
-                <li><a href="asignarMaterias.php">Asignar materias a docentes</a></li>
-                <li><a href="asignarComisiones.php">Asignar comisiones a docentes</a></li>
+                <li><a href="asignarMaterias.php">Asignar docentes a materias</a></li>
+                <li><a href="asignarComisiones.php">Asignar docentes a comisiones</a></li>
               </li>
             </ul>
           </div>
