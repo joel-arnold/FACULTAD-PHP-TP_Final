@@ -37,9 +37,7 @@
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
-    <link href="estilo.css" rel="stylesheet" type="text/css" />
-
-    
+    <link href="estilo.css" rel="stylesheet" type="text/css" />    
 
 </head>
 <body id="page-top">
@@ -58,7 +56,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 formModifAlumnos">
-                        <form class="form-horizontal" role="form" action="bajaPersonasLegajo.php" method="POST" name="formBaja">
+                        <form class="form-horizontal" role="form" action="bajaConfirmacion.php" onsubmit="return controlVacio()" method="POST" name="formBajaLegajo">
                             <div class="form-group">
                                 <label for="inputLegajoBaja" class="label-sm-2">Eliminación por legajo:</label>
                                 <div class="input-sm-5">
@@ -67,14 +65,14 @@
                             </div>
                             <div class="form-group">
                                 <div class="boton-sm-offset-2">
-                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Borrar</button>
+                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Continuar</button>
                                 <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="col-md-6 formModifAlumnos">
-                        <form class="form-horizontal" role="form" action="bajaPersonasNombre.php" method="POST" name="formBaja">
+                        <form class="form-horizontal" role="form" action="bajaConfirmacion.php" method="POST" name="formBajaNombre">
                             <div class="form-group">
                                 <label for="inputLegajoBaja" class="label-sm-2">Eliminación por nombre:</label>
                                 <div class="input-sm-5">
@@ -98,7 +96,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="boton-sm-offset-2">
-                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Borrar</button>
+                                <button type="submit" class="btn btn-default" <?php if($cant_filas == 0) echo "disabled" ?>>Continuar</button>
                                 <a class="btn btn-secondary volver" href="menuAdministrador.php">Volver</a>
                                 </div>
                             </div>
@@ -109,8 +107,6 @@
     </header>
 
     <?php include("pieDePagina.php"); ?>
-
-    <script src="validacion.js"></script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -126,6 +122,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
+
+    <script src="validaBaja.js" type="text/javascript"></script>
 
 </body>
 
